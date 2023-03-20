@@ -139,6 +139,9 @@ li {
 li+li {
     margin-top: 1vw;
 }
+li::marker{
+    color: var(--ghost-accent-color);
+}
 
 dt {
     float: left;
@@ -276,9 +279,7 @@ h6,
 .verdin-subtitle{
     font-size: 1.8rem;
     font-weight: 400;
-    line-height: 26px;
-    padding: 12px 0 25px;
-    color: var(--color-subtitle);
+    padding: 12px 0 0;
 }
 .lh-1{
     line-height: 1;
@@ -291,6 +292,9 @@ h6,
 }
 .text-small{
     font-size: 1.6rem;
+}
+.text-center{
+    text-align: center;
 }
 .color-muted{
     color: var(--color-text-secondary);
@@ -399,6 +403,7 @@ figcaption{
     margin-bottom: 1vw;
     margin-top: 2vw;
 }
+
 
 /* Header */
 .verdin-header{
@@ -831,6 +836,109 @@ figcaption{
     opacity: 0.1;
 }
 
+/* Membership page */
+.verdin-tiers{
+    grid-column: wide-start/wide-end;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2vw;    
+}
+.verdin-checkout-plan{
+    background: var(--color-white);
+    padding: 2vw;
+    border: 1px solid;
+    position: relative;
+}
+
+.verdin-checkout-plan-content{
+    margin: 2vw 0;
+}
+.verdin-toggle-btn {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1vw;
+}
+.switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+.switch input {
+    height: 0;
+    opacity: 0;
+    width: 0;
+}
+input:checked + .slider {
+    background-color: var(--ghost-accent-color);
+}
+.slider.round {
+    border-radius: 34px;
+}
+.slider {
+    background-color: var(--color-light-gray);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+.slider:before {
+    background-color: var(--color-white);
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+    border-radius: 50%;
+}
+.verdin-monthly-label{
+    text-align: right;
+}
+.verdin-top-actions{
+    margin-bottom: 2vw;
+}
+
+.verdin-monthly-price,
+.verdin-checkout-plan .price-btn-monthly{
+    display: none;
+}
+.verdin-active .verdin-monthly-price,
+.verdin-active .verdin-checkout-plan .price-btn-monthly{
+    display: block;
+}
+.verdin-active .verdin-yearly-price,
+.verdin-active .verdin-checkout-plan .price-btn-yearly{
+    display: block;
+}
+
+
+.verdin-plan-paid{
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
+.verdin-plan-paid{
+    font-weight: normal;
+}
+.verdin-plan-paid sup {
+    top: -0.5em;
+}
+.verdin-plan-paid sup {
+    font-size: 57%;
+}
+.verdin-price-label{
+    font-weight: normal;
+    font-size: 2rem;
+    letter-spacing: .05em;
+}
 
 /* CTA */
 
@@ -852,6 +960,10 @@ button,
     text-decoration: none;
     transition: background .2s ease-in-out;
 }
+.disabled{
+    pointer-events: none;
+    opacity: .5;
+}
 .verdin-btn:hover,
 .verdin-subscribe-input:hover .verdin-btn,
 button:hover{
@@ -861,6 +973,9 @@ button:hover{
     height: 58px;
     padding: 0 4rem;
     font-size: 1.6rem;
+}
+.w-full{
+    width: 100%;
 }
 .verdin-search{
     width: 50px;

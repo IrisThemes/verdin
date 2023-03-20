@@ -4,13 +4,13 @@
             {{#has visibility="paid"}}
                 <h2 class="mb-0">{{t "Get instant access to the full library of posts"}}</h2>
                 <p class="mt-1 mb-0">{{t "Sign up now and upgrade your account to read the post and get access to the full library of posts for paying subscribers only."}}</p>
-                 <a class="verdin-btn verdin-primary-btn verdin-btn-large gh-portal-close mt-1" data-portal="signup">{{t "Reserve my seat"}}</a>
+                 <a href="javascript:" class="verdin-btn verdin-primary-btn verdin-btn-large gh-portal-open mt-1" data-portal="signup">{{t "Reserve my seat"}}</a>
                 <span class="cta-spark">{{> icons/lock}}</span>	
             {{/has}}
             {{#has visibility="members"}}
                 <h2 class="mb-0">{{t "Get instant FREE access to the full library of posts"}}</h2>
                 <p class="mt-1 mb-0">{{t "Sign up now to read the post and get access to the full library of posts for subscribers only."}}</p>
-                <a class="verdin-btn verdin-primary-btn verdin-btn-large gh-portal-close mt-1" data-portal="signup">{{t "Free subscribe"}}</a>                		
+                <a href="javascript:" class="verdin-btn verdin-primary-btn verdin-btn-large gh-portal-open mt-1" data-portal="signup">{{t "Free subscribe"}}</a>                		
             {{/has}}
             {{#has visibility="tiers"}}
                 <h2 class="mb-0">{{t "Get instant access the full library of posts"}}</h2>
@@ -20,10 +20,10 @@
                 <span class="verdin-lock">{{tiers prefix="Access with: " lastSeparator=" + "}}</span>
                 </div>
 
-                 <a class="verdin-btn verdin-primary-btn verdin-btn-large gh-portal-close mt-1" data-portal="signup">{{t "Reserve my seat"}}</a>
+                 <a href="javascript:" class="verdin-btn verdin-primary-btn verdin-btn-large gh-portal-open mt-1" data-portal="signup">{{t "Reserve my seat"}}</a>
                 <span class="cta-spark">{{> icons/lock}}</span>	
 
             {{/has}}
-            <p class="text-small mt-1">{{t "Already have an account?"}} <a data-portal="signin" class="gh-portal-close">{{t "Sign in"}}</a></p>
+            <p class="text-small mt-1">{{t "Already have an account?"}} <a href="javascript:" data-portal="signin" class="gh-portal-open">{{t "Sign in"}}</a></p>
     </div>
 </aside>
