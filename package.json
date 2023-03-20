@@ -1,0 +1,126 @@
+{
+    "name": "verdin",
+    "description": "A Minimal Ghost theme",
+    "version": "1.0.1",
+    "private": true,
+    "engines": {
+        "ghost": ">=5.0.0"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Iris Themes",
+        "email": "support@iristhemes.com",
+        "url": "https://iristhemes.com"
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme"
+    ],
+    "docs": "https://iristhemes.com/docs",
+    "config": {
+        "posts_per_page": 6,
+        "image_sizes": {
+            "xs": {
+                "width": 150
+            },
+            "s": {
+                "width": 300
+            },
+            "m": {
+                "width": 720
+            },
+            "l": {
+                "width": 960
+            },
+            "xl": {
+                "width": 1200
+            },
+            "xxl": {
+                "width": 2000
+            }
+        },
+        "custom": {
+            "primary_header": {
+                "type": "text",
+                "default": "Hey Joie Friendster here!",
+                "group": "homepage"
+            },
+            "secondary_header": {
+                "type": "text",
+                "default": "I’m a fashion blogger. If you are a bit of a fashionista, you are in the right place.",
+                "group": "homepage"
+            },
+            "hero_image": {
+                "type": "select",
+                "options": ["Hide publication cover", "Display publication icon", "Publication cover rounded", "Publication cover sharp", "Publication cover stylish"],
+                "default": "Publication cover stylish",
+                "group": "homepage"
+            },
+            "typography": {
+                "type": "select",
+                "options": ["Tight", "Playful", "Elegant"],
+                "default": "Playful"
+            },
+            "background_color": {
+                "type": "color",
+                "default": "#f7f7f7"
+            },
+            "featured_posts_layout": {
+                "type": "select",
+                "options": ["Hide featured posts", "Grid", "List"],
+                "default": "Grid",
+                "group": "homepage"
+            },
+            "number_of_featured_posts": {
+                "type": "text",
+                "default": "3",
+                "group": "homepage"
+            },
+            "latest_posts_layout": {
+                "type": "select",
+                "options": ["Grid", "List"],
+                "default": "List",
+                "group": "homepage"
+            },
+            "enter_tag_slugs_for_homepage_sections": {
+                "type": "text",
+                "group": "homepage"
+            },
+            "number_of_posts": {
+                "type": "text",
+                "default": "3",
+                "group": "homepage"
+            },
+            "email_signup_title": {
+                "type": "text",
+                "default": "Let's take this to your inbox."
+            },
+            "email_signup_subtitle": {
+                "type": "text",
+                "default": "We will send you occasional emails about whatever is on our minds - technology, economics, and puppies. You get the idea."
+            }
+        }
+    },
+    "scripts": {
+        "dev": "gulp",
+        "test": "gscan .",
+        "zip": "gulp zip"
+    },
+    "devDependencies": {
+        "@tryghost/shared-theme-assets": "2.0.1",
+        "autoprefixer": "10.4.13",
+        "beeper": "2.1.0",
+        "cssnano": "5.1.14",
+        "gscan": "4.36.0",
+        "gulp": "4.0.2",
+        "gulp-concat": "2.6.1",
+        "gulp-livereload": "4.0.2",
+        "gulp-postcss": "9.0.1",
+        "gulp-uglify": "3.0.2",
+        "gulp-zip": "5.1.0",
+        "postcss": "8.4.21",
+        "postcss-easy-import": "4.0.0",
+        "pump": "3.0.0"
+    }
+}

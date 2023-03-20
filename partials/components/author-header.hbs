@@ -1,0 +1,52 @@
+<section class="verdin-author verdin-archive mb-4 mt-2">
+
+    <section class="verdin-archive mb-4 mt-2">
+
+        <header class="verdin-list-header verdin-cta">
+
+            <div class="verdin-cta-inner">
+
+                <div class="verdin-cta-content">
+                    <div class="verdin-author-details">
+                        <h1 class="bolder mb-0 h2">{{name}}</h1>
+                        {{#if location}}
+                        <span class="h5 color-accent text-transform-uppercase mt-1 d-block">{{location}}</span>
+                        {{/if}}
+                    </div>
+                    {{#if bio}}
+                    <p class="verdin-archive-description mt-2 mb-0">{{bio}}</p>
+                    {{/if}}
+
+                    <div class="verdin-author-social mt-3">
+                        {{#if website}}
+                        <a class="verdin-social-item" href="{{website}}" target="_blank" rel="noopener noreferrer">
+                            {{>icons/website}}
+                        </a>
+                        {{/if}}
+                        {{#if facebook}}
+                        <a class="verdin-social-item" href="https://www.facebook.com/{{facebook}}" target="_blank"
+                            rel="noopener noreferrer">
+                            {{>icons/facebook}}
+                        </a>
+                        {{/if}}
+                        {{#if twitter}}
+                        <a class="verdin-social-item" href="https://twitter.com/{{twitter}}" target="_blank"
+                            rel="noopener noreferrer">
+                            {{>icons/twitter}}
+                        </a>
+                        {{/if}}
+                    </div>
+                </div>
+
+
+
+                {{#if profile_image}}
+                <figure class="verdin-archive-image">
+                    <img class="verdin-archive-image" data-src="{{img_url profile_image size="m"}}"
+                        src="{{img_url profile_image size="m"}}" alt="{{name}}">
+                </figure>
+                {{/if}}
+
+            </div>
+        </header>
+    </section>

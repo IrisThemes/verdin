@@ -1,0 +1,172 @@
+<article class="verdin-article {{post_class}}">
+
+    <header class="verdin-article-header verdin-outer verdin-hero-inner mb-4">
+
+
+        <div class="verdin-article-header">
+        {{!--
+            HTML comments used in this block are intentional.
+            They're used for eliminating empty spaces between tags which makes :empty selector possible.
+            Can be removed when :has selector is widely supported.
+        --}}
+        <div class="d-block mb-05">
+        <span class="verdin-article-meta"><!--
+         -->{{#if showPrimaryTag}}
+                {{#if primary_tag}}
+                    <a class="verdin-list-item-primary-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
+                {{/if}}
+            {{/if}}
+        </span>
+        </div>
+
+        <h1 class="verdin-article-title bolder">{{title}}</h1>
+
+        <div class="verdin-list-item-meta">
+            {{#if showPrimaryAuthor}}
+                <span class="verdin-list-item-primary-author">{{primary_author.name}}</span>
+            {{/if}}
+
+            {{#if showPublishedAt}}
+                <span class="verdin-list-item-published-at">{{date published_at format="MMMM DD, YYYY"}}</span>
+            {{/if}}
+
+            {{#if showReadingTime}}
+                <span class="verdin-article-meta-length">{{reading_time}}</span>
+            {{/if}}
+
+            {{#if showAccessMeta}}
+                {{#unless access}}
+                    {{#has visibility="paid"}}
+                        <span class="verdin-lock">{{> icons/lock}}{{t "Paid"}}</span>
+                    {{/has}}
+                    {{#has visibility="members"}}
+                        <span class="verdin-lock">{{> icons/lock}}{{t "Members"}}</span>			
+                    {{/has}}
+                    {{#has visibility="tiers"}}
+                        <span class="verdin-lock">{{> icons/lock}}{{t "Paid"}}</span>			
+                    {{/has}}
+                {{/unless}}
+                {{/if}}
+
+
+            {{#if showFeaturedMeta}}
+                {{#if featured}}
+                    <div class="verdin-lock item-featured">
+                        {{> icons/star}}{{t "Featured"}}
+                    </div>
+                {{/if}}
+            {{/if}}
+        </div>
+
+        {{#if custom_excerpt}}
+            <p class="verdin-article-excerpt">{{custom_excerpt}}</p>
+        {{/if}}
+        </div>
+
+        {{#unless hideFeatureImage}}
+            {{#if feature_image}}
+                <figure class="verdin-article-image">
+                    <img
+                        srcset="{{img_url feature_image size="s"}} 300w,
+                                {{img_url feature_image size="m"}} 720w,
+                                {{img_url feature_image size="l"}} 960w,
+                                {{img_url feature_image size="xl"}} 1200w,
+                                {{img_url feature_image size="xxl"}} 2000w"
+                        sizes="(max-width: 1200px) 100vw, 1200px"
+                        src="{{img_url feature_image size="xl"}}"
+                        alt="{{title}}"
+                        class="verdin-hero-image"
+                    >
+                    {{#if feature_image_caption}}
+                        <figcaption>{{feature_image_caption}}</figcaption>
+                    {{/if}}
+                </figure>
+            {{/if}}
+        {{/unless}}
+
+    </header>
+
+    <section class="verdin-content verdin-canvas gh-canvas mb-4">
+        {{#if access}}
+
+            {{#if showPostSidebar}}
+            
+            <div class="verdin-content-sticky z-1">
+                <div class="verdin-content-sticky-inner">
+
+                    <div class="verdin-sticky-item">
+                        {{#primary_author}}
+                            {{#if profile_image}}
+                                <figure class="verdin-author-image">
+                                    <img src="{{profile_image}}" alt="{{name}}">
+                                </figure>
+                            {{/if}}
+                            <span class="verdin-list-item-meta">{{t "Written by"}}</span>
+                            <h4 class="verdin-author-name">                            
+                                <a href="{{url}}" class="text-decoration-none" title="{{name}}">{{name}}</a>
+                            </h4>
+                        {{/primary_author}}
+                    </div>
+
+                    {{!-- Show share only if post is public --}}
+                    {{> "components/share"}}
+
+                    <div class="verdin-sticky-item">
+                            {{#prev_post}}
+                                <div class="verdin-prev-post d-block">
+                                    <span class="verdin-list-item-meta">{{t "Previous post"}}</span>
+                                    <a class="verdin-navigation-link h6 d-block text-decoration-none" href="{{url}}" title="{{title}}">{{title}}</a>
+                                </div>
+                            {{/prev_post}}
+
+                            {{#next_post}}
+                                <div class="verdin-next-post d-block mt-3">
+                                    <span class="verdin-list-item-meta">{{t "Next post"}}</span>
+                                    <a class="verdin-navigation-link h6 d-block text-decoration-none" href="{{url}}" title="{{title}}">{{title}}</a>
+                                </div>
+                            {{/next_post}}
+                    </div>
+
+            </div>
+
+            </div>
+            {{/if}}
+            
+            
+            {{content}}
+            
+
+            <div class="verdin-tags ">
+                {{tags separator=""}}
+            </div>
+            
+
+        {{else}}
+            <div class="verdin-post-sneak-peek fading">
+                {{{html}}}
+            </div>
+            {{> content-cta}}
+        {{/if}}
+
+        {{#if showComments}}
+            {{#if comments}}
+                <div class="verdin-article-comments verdin-canvas mt-4">
+                    <h2 class="verdin-article-comments-title">{{comment_count empty="" single="comment" plural="comments"}}</h2>
+                    {{comments title="" count=false}}
+                </div>
+            {{/if}}
+        {{/if}}
+
+        {{#if access}}
+            {{#if shotRelatedPosts}}
+                {{> "components/related"}}
+            {{/if}}
+        {{/if}}
+
+    </section>
+
+
+
+
+
+</article>

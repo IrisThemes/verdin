@@ -1,0 +1,90 @@
+{{!< default}}
+{{#match @custom.featured_posts_layout "!=" "Hide featured posts"}}
+<section class="verdin-featured mb-4">
+    <div class="verdin-outer">
+
+        {{#match @custom.featured_posts_layout "Grid"}}
+        
+            {{> "components/list-featured" 
+                count=@custom.number_of_featured_posts
+                layout="grid" 
+                showHeader=true 
+                showPrimaryAuthor=false
+                showPublishedAt=true
+                showAccessMeta=false
+                showFeaturedMeta=true
+                showPrimaryTag=true
+                showImageHoverAnimation=false
+                showMetaHoverAnimation=false
+                titleSize="h4"
+            }}
+
+        {{else}}
+
+            {{> "components/list-featured" 
+                count=@custom.number_of_featured_posts
+                layout="list" 
+                showHeader=true 
+                showPrimaryAuthor=false
+                showPublishedAt=true
+                showAccessMeta=true
+                 showFeaturedMeta=false
+                showPrimaryTag=true
+                showImageHoverAnimation=true
+                showMetaHoverAnimation=true
+                titleSize="h2"
+                }}
+
+        {{/match}}
+
+    </div>
+</section>
+{{/match}}
+
+<main class="verdin-main verdin-outer">
+
+    {{#match @custom.latest_posts_layout "Grid"}}
+    
+        {{> "components/list" 
+            count=@custom.number_of_posts
+            layout="grid" 
+            showHeader=true 
+            showExcerpt=false
+            showPrimaryAuthor=false
+            showPublishedAt=false
+            showAccessMeta=true
+            showPrimaryTag=true
+            showFeaturedMeta=true
+            showReadingTime=true
+            showImageHoverAnimation=false
+            showMetaHoverAnimation=false
+            titleSize="h4"
+        }}
+
+    {{else}}
+
+        {{> "components/list" 
+            count=@custom.number_of_posts
+            layout="list" 
+            showHeader=true 
+            showExcerpt=false
+            showPrimaryAuthor=true
+            showPublishedAt=true
+            showAccessMeta=true
+            showPrimaryTag=true
+            showFeaturedMeta=true
+            showReadingTime=true
+            showImageHoverAnimation=true
+            showMetaHoverAnimation=true
+            titleSize="h2"
+        }}
+
+    {{/match}}
+
+    {{> "components/list-authors"}}
+
+    {{> "components/list-tags" title="Popular topics" count="6"}}
+
+    {{> "components/cta" title=@custom.email_signup_title subTitle=@custom.email_signup_subtitle}}
+
+</main>

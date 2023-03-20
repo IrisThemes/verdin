@@ -1,0 +1,46 @@
+{{!--
+    Parameters:
+    * count (number)
+    * columns (number)
+    * slug (tag)
+    * showHeader (true, false)
+    * showPrimaryTag (true, false)
+    * showPrimaryAuthor (true, false)
+    * showExcerpt (true, false)
+    * showPublishedAt (true, false)
+    * showReadingTime (true, false)
+    * hasPagination (true, false)
+--}}
+
+<div class="verdin-list" data-column="{{column}}">
+    <div class="verdin-list-inner">
+
+        <header class="verdin-list-header">
+            <h2 class="verdin-list-title h5 bolder">{{t "Our writers"}}</h2>
+        </header>
+
+
+        <div class="verdin-list-feed verdin-authors-feed mb-4">
+
+            {{#get "authors" limit="5" include="count.posts" order="count.posts desc"}}
+                {{#foreach authors}}
+
+                <a href="{{url}}" class="{{#unless profile_image}} authors-no-image {{/unless}}">
+                {{#if profile_image}}
+                    <img class="verdin-author-image" loading="lazy" src="{{ img_url profile_image size="l"}}"
+                        alt="{{ name }}" />
+                {{/if}}
+                        <span class="verdin-author-count-posts">
+                            <span class="verdin-label">{{count.posts}}</span>
+                            <span class="verdin-meta-item">{{plural count.posts empty='No posts' singular='post' plural='posts'}}</span>
+                        </span>
+                </a>
+                
+
+                {{/foreach}}
+            {{/get}}
+        </div>
+
+
+    </div>
+</div>

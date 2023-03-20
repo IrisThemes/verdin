@@ -1,0 +1,46 @@
+{{!--
+    Parameters:
+    * layout (grid, magazine)
+    * count (number)
+    * columns (number)
+    * slug (tag)
+    * showHeader (true, false)
+    * showPrimaryTag (true, false)
+    * showPrimaryAuthor (true, false)
+    * showExcerpt (true, false)
+    * showPublishedAt (true, false)
+    * showReadingTime (true, false)
+    * hasPagination (true, false)
+--}}
+
+<div class="verdin-list verdin-{{layout}}-wrapper">
+    <div class="verdin-list-inner">
+
+    {{#if showHeader}}
+            <header class="verdin-list-header">
+                <h2 class="verdin-list-title h5 bolder">{{t "Featured writings"}}</h2>
+            </header>
+    {{/if}}    
+   
+    <div class="verdin-{{layout}}-feed verdin-feed">
+        {{#get "posts" include="authors,tags" filter="featured:true" limit=count}}
+            {{#if posts}}
+                {{#foreach posts}}
+                    {{> components/list-item 
+                    showExcerpt=false 
+                    showPrimaryAuthor=../../showPrimaryAuthor
+                    showPublishedAt=../../showPublishedAt
+                    showAccessMeta=../../showAccessMeta
+                    showFeaturedMeta=../../showFeaturedMeta
+                    showPrimaryTag=../../showPrimaryTag
+                    showImageHoverAnimation=../../showImageHoverAnimation
+                    showMetaHoverAnimation=../../showMetaHoverAnimation
+                    titleSize=../../titleSize
+                    }}
+                    {{/foreach}}
+            {{/if}}
+        {{/get}}
+    </div>        
+
+    </div>
+</div>

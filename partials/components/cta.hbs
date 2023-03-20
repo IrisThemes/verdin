@@ -1,0 +1,32 @@
+{{#if @site.members_enabled}}
+    {{#unless @member}}
+        <section class="verdin-cta verdin-outer">
+            <div class="verdin-cta-inner">
+                <div class="cta-spark">
+                    {{> icons/sparks}}
+                </div>
+                <div class="verdin-cta-content">
+                    {{#if title}}
+                        <h2 class="verdin-cta-title h3">{{title}}</h2>
+                    {{/if}}
+
+                    {{#if subTitle}}
+                        <p class="verdin-cta-subtitle verdin-subtitle mt-1">{{subTitle}}</p>
+                    {{/if}}
+                </div>
+
+                {{#if @site.members_enabled}}
+                    {{#unless @member}}
+                    <div class="verdin-subscribe-col">
+                        <div class="verdin-subscribe-input" data-portal>
+                            jamie@example.com
+                            <span class="verdin-btn verdin-primary-btn">Subscribe</span>
+                        </div>
+                    </div>
+                    {{/unless}}
+                {{/if}}
+
+            </div>
+        </section>
+    {{/unless}}
+{{/if}}

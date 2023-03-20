@@ -1,0 +1,74 @@
+<article class="verdin-list-item {{post_class}} {{#if showImageHoverAnimation}}verdin-image-hover{{/if}} {{#if showMetaHoverAnimation}}verdin-meta-hover{{/if}}">
+
+    <a class="verdin-list-item-inner" href="{{url}}">
+        <div class="verdin-list-item-content">
+
+            {{#if showPrimaryTag}}
+                {{#if primary_tag.name}}
+                    <div class="d-block mb-05">
+                        <span class="verdin-list-item-primary-tag">{{primary_tag.name}}</span>
+                    </div>
+                {{/if}}
+            {{/if}}
+
+            <h3 class="verdin-list-item-title {{titleSize}}">{{title}}</h3>
+
+            {{#if showExcerpt}}
+                <p class="verdin-list-item-excerpt">{{excerpt}}</p>
+            {{/if}}
+
+            <div class="verdin-list-item-meta verdin-list-item-meta-hide">
+                {{#if showPrimaryAuthor}}
+                    <span class="verdin-list-item-primary-author">{{primary_author.name}}</span>
+                {{/if}}
+
+                {{#if showPublishedAt}}
+                    <span class="verdin-list-item-published-at">{{date published_at format="MMMM DD, YYYY"}}</span>
+                {{/if}}
+
+                {{#if showReadingTime}}
+                    <span class="verdin-article-meta-length">{{reading_time}}</span>
+                {{/if}}
+
+                {{#if showAccessMeta}}
+                    {{#unless access}}
+                        {{#has visibility="paid"}}
+                            <span class="verdin-lock">{{> icons/lock}}{{t "Paid"}}</span>
+                        {{/has}}
+                        {{#has visibility="members"}}
+                            <span class="verdin-lock">{{> icons/lock}}{{t "Members"}}</span>			
+                        {{/has}}
+                        {{#has visibility="tiers"}}
+                            <span class="verdin-lock">{{> icons/lock}}{{t "Paid"}}</span>			
+                        {{/has}}
+                    {{/unless}}
+                 {{/if}}
+
+
+                {{#if showFeaturedMeta}}
+                    {{#if featured}}
+                        <div class="verdin-lock item-featured">
+                            {{> icons/star}}{{t "Featured"}}
+                        </div>
+                    {{/if}}
+                {{/if}}
+            </div>
+        </div>
+
+        {{#if feature_image}}
+            <figure class="verdin-list-item-image">
+                <img
+                    srcset="{{img_url feature_image size="s"}} 300w,
+                            {{img_url feature_image size="m"}} 720w,
+                            {{img_url feature_image size="l"}} 960w,
+                            {{img_url feature_image size="xl"}} 1200w,
+                            {{img_url feature_image size="xxl"}} 2000w"
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    src="{{img_url feature_image size="m"}}"
+                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                >
+            </figure>
+        {{/if}}
+
+    </a>
+</article>

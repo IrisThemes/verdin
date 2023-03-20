@@ -1,0 +1,26 @@
+{{!< default}}
+
+{{#post}}
+<section class="section">
+    <div class="container">
+        <h1 class="title has-text-centered is-montserrat"><i class="iconfont icon-archive"></i> {{title}}</h1>     
+    </div>
+</section>
+<section class="verdin-outer">
+
+{{#get "posts" limit="all" order="published_at desc"}}
+  <article class="content-wrap">
+    {{#foreach posts visibility="all"}}
+<a href="{{url}}" class="gh-postlist-item">
+<article>
+<h2 class="gh-postlist-item-title">{{title}}</h2>
+<time class="gh-postlist-item-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+<span class="gh-postlist-item-duration">{{reading_time}}</span>
+<div class="right-arrow"><i class="fa fa-arrow-right"></i></div>
+</article>
+</a>
+    {{/foreach}}
+  </article>
+{{/get}}
+</section>
+{{/post}}

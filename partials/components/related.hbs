@@ -1,0 +1,32 @@
+<!-- related posts -->
+<div class="verdin-related mt-2">
+<h4 class="mb-3 h3">{{t "Related posts"}}</h4>
+  <div class="verdin-related-posts-inner">
+    {{#get "posts" limit="3" filter="id:-{{id}}+tag:{{primary_tag.slug}}"}}
+      {{#foreach posts}}
+        <div class="verdin-related-item mb-3">
+            <a href="{{url}}" title="{{title}}" class="mb-0 text-decoration-none">
+             {{#if feature_image}}            
+                    <img
+                        srcset="{{img_url feature_image size="s"}} 300w,
+                                {{img_url feature_image size="s"}} 720w,
+                                {{img_url feature_image size="s"}} 960w,
+                                {{img_url feature_image size="s"}} 1200w,
+                                {{img_url feature_image size="s"}} 2000w"
+                        sizes="(max-width: 1200px) 100vw, 1200px"
+                        src="{{img_url feature_image size="s"}}"
+                        alt="{{title}}"
+                        class="verdin-rounded"
+                    >
+            {{/if}}
+            <span class="verdin-related-item-content">
+                <span class="h4">{{title}}</span>
+                <span class="verdin-list-item-meta mt-0"><span class="verdin-list-item-published-at">{{date format="MMMM DD, YYYY"}}</span></span>
+            </span>
+            </a>
+        </div>
+      {{/foreach}}
+    {{/get}}
+  </div>
+</div>
+<!-- end related posts -->

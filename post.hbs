@@ -1,0 +1,23 @@
+{{!< default}}
+
+{{#post}}
+
+<main class="verdin-main">
+    {{> "components/article" 
+                showComments=true
+                showExcerpt=true 
+                showPrimaryAuthor=true 
+                showPublishedAt=true 
+                showAccessMeta=true 
+                showPrimaryTag=true
+                showFeaturedMeta=true
+                showReadingTime=true 
+                showPostSidebar=true
+                shotRelatedPosts=true      
+    }}
+
+    {{> "components/cta" title=@custom.email_signup_title subTitle=@custom.email_signup_subtitle}}
+
+</main>
+
+{{/post}}

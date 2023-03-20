@@ -1,0 +1,27 @@
+{{!< default}}
+
+<main class="verdin-main verdin-outer">
+
+        {{#author}}
+            {{> "components/author-header"}}
+        {{/author}}
+
+        {{> "components/list"
+            count="6"
+            layout="list" 
+            showHeader=false 
+            showExcerpt=false
+            showPrimaryAuthor=true
+            showPublishedAt=true
+            showAccessMeta=true
+            showPrimaryTag=true
+            showFeaturedMeta=true
+            showReadingTime=true
+            showImageHoverAnimation=true
+            showMetaHoverAnimation=true
+            titleSize="h2"        
+        }}
+
+        {{> "components/cta" title=@custom.email_signup_title subTitle=@custom.email_signup_subtitle}}
+
+</main>

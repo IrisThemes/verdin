@@ -1,0 +1,38 @@
+<section class="verdin-about verdin-outer mb-4">
+    <div class="verdin-about-inner {{#match @custom.hero_image "=" "Display publication icon"}} verdin-icon-on {{/match}}">
+       
+        {{#match @custom.hero_image "=" "Display publication icon"}}
+            {{#if @site.icon}}
+                <img class="verdin-about-icon" src="{{@site.icon}}" alt="{{@site.title}}">
+            {{/if}}
+         {{else}}       
+       
+        {{#match @custom.hero_image "!=" "Hide publication cover"}}
+            {{#if @site.cover_image}}
+                <img class="verdin-about-image {{#match @custom.hero_image "=" "Publication cover rounded"}} verdin-rounded {{/match}} {{#match @custom.hero_image "=" "Publication cover stylish"}} verdin-stylish {{/match}} " src="{{@site.cover_image}}" alt="{{@site.title}}">
+            {{/if}}
+        {{/match}}
+
+        {{/match}}
+        
+
+
+        <div class="verdin-about-content">
+            <div class="verdin-about-content-inner">
+                
+                <h1 class="verdin-about-primary bolder h1 bold">{{@custom.primary_header}}</h1>               
+              
+                <p class="verdin-about-secondary">{{@custom.secondary_header}}</p>
+              
+                {{#if @site.members_enabled}}
+                    {{#unless @member}}
+                        <div class="verdin-subscribe-input" data-portal>
+                            jamie@example.com
+                            <span class="verdin-btn verdin-primary-btn">Subscribe</span>
+                        </div>
+                    {{/unless}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</section>

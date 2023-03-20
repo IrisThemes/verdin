@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{meta_title}}</title>
+
+    <style>
+        :root {
+            --color-bg: {{@custom.background_color}}
+        }
+    </style>
+
+    
+    <link rel="stylesheet" href="{{asset "built/screen.css"}}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    {{#match @custom.typography "Tight"}}
+        <link href="https://fonts.googleapis.com/css2?family=Inter&family=Inter+Tight:wght@400;600;700;800&display=swap" rel="stylesheet">
+    {{/match}}
+    {{#match @custom.typography "Playful"}}
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700;900&family=Roboto+Flex:opsz,wght@8..144,400;8..144,700&display=swap" rel="stylesheet">
+    {{/match}}
+     {{#match @custom.typography "Elegant"}}
+        <link href="https://fonts.googleapis.com/css2?family=Joan&family=Lora:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    {{/match}}
+
+    <script>
+        var site_url = '{{ @site.url }}',
+            pagination_next_page_number = '{{ pagination.next }}',
+            pagination_available_pages_number = '{{ pagination.pages }}';
+    </script>
+
+    <script>
+        /* The script for calculating the color contrast was taken from
+        https://gomakethings.com/dynamically-changing-the-text-color-based-on-background-color-contrast-with-vanilla-js/ */
+        var accentColor = getComputedStyle(document.documentElement).getPropertyValue('--color-bg');
+        accentColor = accentColor.trim().slice(1);
+        var r = parseInt(accentColor.substr(0, 2), 16);
+        var g = parseInt(accentColor.substr(2, 2), 16);
+        var b = parseInt(accentColor.substr(4, 2), 16);
+        var yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+        var textColor = (yiq >= 128) ? 'dark' : 'light';
+
+        document.documentElement.className = `has-${textColor}-text`;
+    </script>
+
+    {{ghost_head}}
+</head>
+
+<body class="{{body_class}} {{#match @custom.typography "Tight"}}is-font-tight{{/match}} {{#match @custom.typography "Playful"}}is-font-playful{{/match}}{{#match @custom.typography "Elegant"}}is-font-elegant{{/match}}">
+
+<div class="verdin-site">
+
+        {{> "components/header" }}
+        
+        {{#is "home"}}
+            {{> "components/about" }}
+        {{/is}}
+
+        {{{body}}}
+
+        {{> "components/footer" }}
+
+</div>
+
+
+<script src="{{asset "built/main.min.js"}}"></script>
+
+{{ghost_foot}}
+
+</body>
+
+</html>
