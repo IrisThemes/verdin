@@ -1,6 +1,7 @@
 {{#if @site.members_enabled}}
     {{#unless @member}}
-        <section class="verdin-cta verdin-outer">
+    <section class="verdin-cta-wrapper">
+        <div class="verdin-cta">
             <div class="verdin-cta-inner">
                 <div class="cta-spark">
                     {{> icons/sparks}}
@@ -27,6 +28,7 @@
                 {{/if}}
 
             </div>
-        </section>
+        </div>
+    </section>
     {{/unless}}
 {{/if}}

@@ -41,6 +41,8 @@
     --gap: clamp(2rem, 1.82vw + 1.27rem, 3.6rem);
     --content-width: 740px;
     --container-width: 1260px;
+
+    --main-spacing: 4vw;
 }
 
 :root.has-light-text {
@@ -259,7 +261,7 @@ h6,
 }
 
 p {
-    margin-bottom: 2.5vw;
+    margin-bottom: calc(var(--main-spacing)/1.68);
 }
 
 p:last-child {
@@ -270,46 +272,54 @@ p:last-child {
 h1,
 .h1 {
     margin-top: 0;
-    font-size: 6.6666rem;
+    font-size: 1rem;
+    font-size: clamp(2.6rem, -0.8886666666666669rem + 9.443333333333333vw, 6.666rem);
     line-height: 1.2;
 }
 
 h2,
 .h2 {
-    font-size: 4.254rem;
+    font-size: 1rem;
+    font-size: clamp(2.4rem, -0.08466666666666667rem + 5.423333333333333vw, 4.254rem);
     line-height: 1.35;
 }
 
 .verdin-list-feed article:first-child .h2 {
-    font-size: 5.9rem !important;
+    font-size: 1rem;
+    font-size: clamp(2.4rem, -0.6333333333333333rem + 8.166666666666666vw, 5.9rem) !important;
 }
 
 .verdin-list-feed article:nth-child(2) .h2,
 .display-2 {
-    font-size: 5.3rem !important;
+    font-size: 1rem;
+    font-size: clamp(2.4rem, -0.4333333333333331rem + 7.166666666666666vw, 5.3rem) !important;
 }
 
 h3,
 .h3 {
-    font-size: 3.236rem;
+    font-size: 1rem;
+    font-size: clamp(2.2rem, 0.2546666666666666rem + 3.726666666666667vw, 3.236rem);
     line-height: 1.35;
 }
 
 h4,
 .h4 {
-    font-size: 2.418rem;
+    font-size: 1rem;
+    font-size: clamp(2.2rem, 0.5273333333333332rem + 2.3633333333333337vw, 2.418rem);
     line-height: 1.2;
 }
 
 h5,
 .h5 {
-    font-size: 2rem;
+    font-size: 1rem;
+    font-size: clamp(2.1rem, 0.6666666666666667rem + 1.6666666666666667vw, 2rem);
     line-height: 1.4;
 }
 
 h6,
 .h6 {
-    font-size: 1.7rem;
+    font-size: 1rem;
+    font-size: clamp(2rem, 0.7666666666666667rem + 1.1666666666666665vw, 1.7rem);
     line-height: 1.4;
 }
 
@@ -368,7 +378,7 @@ h6,
 }
 
 [data-gap="4"] {
-    gap: 4vw;
+    gap: var(--main-spacing);
 }
 
 [data-gap="2"] {
@@ -405,7 +415,7 @@ h6,
 }
 
 .mt-4 {
-    margin-top: 4vw;
+    margin-top: var(--main-spacing);
 }
 
 .mb-05 {
@@ -422,7 +432,7 @@ h6,
 
 .mb-4,
 .verdin-grid-feed {
-    margin-bottom: 4vw;
+    margin-bottom: var(--main-spacing);
 }
 
 .mb-1 {
@@ -438,7 +448,7 @@ h6,
 }
 
 .px-4 {
-    padding: 0 4vw;
+    padding: 0 var(--main-spacing);
 }
 
 .color-bg-accent {
@@ -481,13 +491,14 @@ figcaption {
 }
 
 
+
 /* ==========================================================================
    Header
    ========================================================================== */
 
 .verdin-header {
     margin-bottom: 0;
-    height: 8vw;
+    height: 140px;
     display: flex;
     align-items: center;
 }
@@ -534,8 +545,8 @@ figcaption {
 
 .verdin-section-bg {
     background: var(--color-lightest-gray);
-    padding-top: 4vw;
-    padding-bottom: 4vw;
+    padding-top: var(--main-spacing);
+    padding-bottom: var(--main-spacing);
 }
 
 /* ==========================================================================
@@ -559,20 +570,60 @@ figcaption {
 .verdin-hero-image {
     border-radius: 200px 200px 0 0;
     aspect-ratio: 2/2.69;
-    width: 420px;
+    width: 300px;
+}
+@media (max-width: 768px) {
+    .verdin-stylish,
+    .verdin-hero-image {
+        width: 300px;  
+    }
+}
+@media (min-width: 1000px) {
+    .verdin-stylish,
+    .verdin-hero-image{
+        width: 420px;
+    }
 }
 
 .verdin-about-inner,
 .verdin-hero-inner {
     display: flex;
     align-items: center;
-    gap: 10rem;
+    gap: 4rem;
+}
+@media (max-width: 768px) {
+    .verdin-about-inner,
+    .verdin-hero-inner {
+        gap: 2rem;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+@media (min-width: 1000px) {
+    .verdin-about-inner,
+    .verdin-hero-inner {
+        display: flex;
+        align-items: center;
+        gap: 5rem;
+    }
+}
+@media (min-width: 1200px) {
+    .verdin-about-inner, .verdin-hero-inner{
+        gap: 10rem;
+    }
 }
 
 .verdin-about-secondary {
     max-width: 640px;
     margin-top: 3.5rem;
     margin-bottom: 3.5rem;
+}
+@media (max-width: 768px) {
+    .verdin-about-secondary {
+        max-width: 100%;
+        margin-top: 1.5rem;
+        margin-bottom: 2.5rem;
+    }    
 }
 
 .verdin-subscribe-input {
@@ -585,6 +636,11 @@ figcaption {
     font-size: 1.8rem;
     font-family: monospace;
     cursor: pointer;
+}
+@media (max-width: 768px) {
+    .verdin-subscribe-input {
+        max-width: 100%;
+    }
 }
 
 .verdin-head-members {
@@ -648,12 +704,31 @@ figcaption {
     max-width: 50%;
     padding-left: 10vw;
 }
-
-.verdin-outer {
-    max-width: 1260px;
+.verdin-outer{
     margin-left: auto;
     margin-right: auto;
+
 }
+
+@media (max-width: 1315px) {
+    .verdin-outer{
+        max-width: 100%;
+        padding-left: var(--main-spacing);
+        padding-right: var(--main-spacing);
+    }
+}
+@media (min-width: 1315px) {
+    .verdin-outer {
+        max-width: 1260px;
+    }
+}
+@media (max-width: 768px) {
+    .verdin-outer{
+        max-width: 650px;
+    }
+}
+
+
 
 /* ==========================================================================
   List feed
@@ -665,10 +740,15 @@ figcaption {
 }
 
 .verdin-list-feed .verdin-list-item-inner {
-    padding-bottom: 4vw;
+    padding-bottom: var(--main-spacing);
     display: grid;
     grid-template-columns: 60% 40%;
     align-items: center;
+}
+@media (max-width: 768px) {
+    .verdin-list-feed .verdin-list-item-inner {
+        grid-template-columns: 100%;
+    } 
 }
 
 /* ==========================================================================
@@ -681,13 +761,24 @@ figcaption {
     gap: 2vw;
 }
 
+
 .verdin-grid-feed .verdin-list-item-inner {
     display: flex;
     flex-direction: column-reverse;
     background: var(--color-white);
-    padding: 1.1vw;
+    padding: calc(var(--main-spacing)/3);
     border: 1px solid;
     transition: all .2s ease-in-out;
+}
+@media (max-width: 768px) {
+    .verdin-grid-feed {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: calc(var(--main-spacing)/2);
+    }   
+    .verdin-grid-feed .verdin-list-item-inner{
+        padding: calc(var(--main-spacing)/2);
+    }
 }
 
 .verdin-grid-feed .verdin-list-item-inner:hover {
@@ -727,11 +818,11 @@ figcaption {
     height: 15px;
     width: 62px;
     opacity: .1;
-    margin-top: 2vw;
+    margin-top: calc(var(--main-spacing)/2);
 }
 
 .verdin-list-title {
-    margin-bottom: 2vw;
+    margin-bottom: calc(var(--main-spacing)/2);
     display: flex;
     align-items: flex-start;
     letter-spacing: 0.11em;
@@ -739,6 +830,15 @@ figcaption {
     line-height: 1;
     position: relative;
     flex-direction: column;
+}
+@media (max-width: 768px) {
+    .verdin-list-title:after{
+        margin-top: calc(var(--main-spacing)/1);
+    }    
+    .verdin-list-title{
+        margin-top: calc(var(--main-spacing)*2);
+        margin-bottom: calc(var(--main-spacing)/1);
+    }
 }
 
 .verdin-list-item {
@@ -751,12 +851,6 @@ figcaption {
     transition: all .4s ease-in-out;
 }
 
-.verdin-list-feed .verdin-list-item-image {
-    width: 390px;
-    height: 390px;
-    border-radius: 50%;
-    overflow: hidden;
-}
 
 .verdin-grid-feed .verdin-list-item-image {
     width: 100%;
@@ -768,18 +862,8 @@ figcaption {
 }
 
 
-.verdin-list-feed .verdin-list-item-image img {
-    height: 100%;
-    object-fit: cover;
-    aspect-ratio: 1/1;
-}
 
-.verdin-image-hover .verdin-list-item-image {
-    opacity: 0;
-    position: absolute;
-    z-index: 9999;
-    right: 0;
-}
+
 
 .verdin-image-hover:hover .verdin-list-item-image,
 .verdin-meta-hover:hover .verdin-list-item-meta-hide {
@@ -787,7 +871,7 @@ figcaption {
 }
 
 .verdin-list-item-primary-tag {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: .11em;
     font-family: var(--font-title);
@@ -810,16 +894,14 @@ figcaption {
 
 .verdin-list-item-meta {
     color: var(--color-text-secondary);
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     display: flex;
     align-items: center;
     transition: all 0.2s ease-in-out;
     margin-top: 1.5rem;
 }
 
-.verdin-meta-hover .verdin-list-item-meta-hide {
-    opacity: 0;
-}
+
 
 .verdin-list-item-meta span {
     display: inline-flex;
@@ -836,7 +918,7 @@ figcaption {
     border-radius: 50%;
     content: "";
     height: 4px;
-    margin: auto 1.5rem;
+    margin: auto 0.9rem;
     width: 4px;
     display: inline-flex;
 }
@@ -847,6 +929,63 @@ figcaption {
 
 .featured .item-featured {
     background-color: var(--ghost-accent-color);
+}
+
+@media (min-width: 768px) {
+    .verdin-image-hover .verdin-list-item-image {
+        opacity: 0;
+        position: absolute;
+        z-index: 9999;
+        right: 0;
+    }    
+    .verdin-list-feed .verdin-list-item-image {
+        width: 390px;
+        height: 390px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .verdin-list-feed .verdin-list-item-image img {
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 1/1;
+    }
+
+    .verdin-meta-hover .verdin-list-item-meta-hide {
+        opacity: 0;
+    }
+
+    .verdin-list-item-meta,
+    .verdin-list-item-primary-tag{
+        font-size: 1.8rem;
+    }
+    .verdin-list-item-meta span:before{
+        margin: auto 1.5rem;
+    }
+    
+}
+@media (max-width: 768px) {
+    .verdin-list-feed .verdin-list-item-image{
+        order: -1;
+        margin-bottom: 1rem;
+    }
+    .verdin-list-title{
+
+    }
+    .verdin-list-item-meta{
+        flex-wrap: wrap;
+        margin-top: 1rem;
+    }
+    .verdin-list-item-inner{
+        position: relative;
+    }
+    .verdin-list-item-inner .verdin-lock{
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
+
+    
+
 }
 
 /* ==========================================================================
@@ -1193,6 +1332,9 @@ button:hover {
     justify-self: center;
 
 }
+.verdin-head-actions .show-on-md{
+    display: none;
+}
 
 .verdin-cta-inner {
     display: grid;
@@ -1200,10 +1342,25 @@ button:hover {
     align-items: center;
     gap: 2vw;
 }
+@media (max-width: 768px) {
+    .verdin-cta-inner {
+        grid-template-columns: 100%;
+        gap: 4vw;
+    }   
+    .verdin-subscribe-input{
+        flex-direction: column;
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;        
+    } 
+    .verdin-subscribe-input .verdin-btn{
+        width: 100%;
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+}
 
 .verdin-cta {
     background: var(--color-lightest-gray);
-    padding: 4vw;
+    padding: var(--main-spacing);
     position: relative;
 }
 
@@ -1214,7 +1371,7 @@ button:hover {
 .cta-spark {
     opacity: .1;
     position: absolute;
-    right: 4vw;
+    right: var(--main-spacing);
     z-index: -1;
 }
 
@@ -1273,6 +1430,19 @@ button:hover {
 .verdin-article-header {
     flex: 0 0 55%;
 }
+@media (max-width: 768px) {
+    .verdin-article-header {
+        flex: 0 0 100%;
+        flex-direction: column-reverse;
+    }   
+    .verdin-article-header .verdin-list-item-meta{
+        justify-content: center;
+    }
+    .verdin-article-header .verdin-lock{
+        margin-top: 1rem;
+    }
+}
+
 
 .verdin-article-header {
     justify-content: space-between;
@@ -1300,28 +1470,12 @@ button:hover {
     Share
    ========================================================================== */
 
-.verdin-content-sticky {
-    grid-column: wide-start/main-start;
-    position: absolute;
-    top: 0;
-    align-self: start;
-    height: 100%;
-}
 
-.verdin-content-sticky-inner {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5vw;
-    padding-right: 3vw;
-    position: sticky;
-    width: 100%;
-    top: 4vw;
-}
 
 .verdin-share-list {
     display: grid;
     gap: 0.5rem;
-    grid-template-columns: repeat(3, 48px);
+    grid-template-columns: repeat(6, 48px);
     justify-content: flex-start;
     list-style: none;
     margin-top: 1rem;
@@ -1385,9 +1539,41 @@ button:hover {
     margin-bottom: 0.5rem;
 }
 
-.verdin-sticky-item {
-    max-width: 221px;
-}
+
+@media (min-width: 1200px) {
+    .verdin-content-sticky {
+        grid-column: wide-start/main-start;
+        position: absolute;
+        top: 0;
+        align-self: start;
+        height: 100%;
+    }
+    .verdin-content-sticky-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5vw;
+        padding-right: 3vw;
+        position: sticky;
+        width: 100%;
+        top: var(--main-spacing);
+    }
+    .verdin-sticky-item {
+        max-width: 221px;
+    }
+    .verdin-share-list{
+        grid-template-columns: repeat(3, 48px); 
+    }
+    
+    }
+    
+    @media (max-width: 1200px) {
+    
+    .verdin-content-sticky .verdin-sticky-item{
+        margin-top: calc(var(--main-spacing)/2);
+    }
+    }
+
+
 
 
 /* ==========================================================================
@@ -1517,7 +1703,7 @@ button:hover {
 }
 
 .verdin-archive .verdin-cta {
-    padding: 2vw 4vw;
+    padding: 2vw var(--main-spacing);
 }
 
 .verdin-archive-header {
@@ -1590,7 +1776,8 @@ iframe,
 
 .verdin-footer {
     border-top: none;
-    padding: 4vw 0 4vw;
+    padding-top: var(--main-spacing);
+    padding-bottom: var(--main-spacing);
     font-size: 1.6rem;
 }
 
@@ -1598,6 +1785,12 @@ iframe,
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+@media (max-width: 768px) {
+    .verdin-foot-inner{
+        flex-direction: column;
+        gap: var(--main-spacing);
+    } 
 }
 
 .verdin-foot-inner .nav li {
@@ -1617,4 +1810,35 @@ iframe,
     line-height: 0;
     margin-right: 1.5rem;
     color: var(--ghost-accent-color);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .hide-on-lg{
+        display: none;
+    }
+}
+@media (max-width: 1020px) {
+
+    .hide-on-md{
+        display: none;
+    }
+    .show-on-md{
+        display: block !important;
+    }
+}
+@media (max-width: 768px) {
+    :root {
+        --main-spacing: 10vw;
+    }
+    .verdin-pagination button{
+        width: 100%;
+    }
+}
+@media (max-width: 515px) {
+    :root {
+        --main-spacing: 6vw;
+    }
 }

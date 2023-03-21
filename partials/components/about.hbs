@@ -9,7 +9,7 @@
        
         {{#match @custom.hero_image "!=" "Hide publication cover"}}
             {{#if @site.cover_image}}
-                <img class="verdin-about-image {{#match @custom.hero_image "=" "Publication cover rounded"}} verdin-rounded {{/match}} {{#match @custom.hero_image "=" "Publication cover stylish"}} verdin-stylish {{/match}} " src="{{@site.cover_image}}" alt="{{@site.title}}">
+                <img class="verdin-about-image {{#match @custom.hero_image "=" "Publication cover rounded"}}verdin-rounded{{/match}}{{#match @custom.hero_image "=" "Publication cover stylish"}}verdin-stylish{{/match}}" src="{{@site.cover_image}}" alt="{{@site.title}}">
             {{/if}}
         {{/match}}
 

@@ -9,7 +9,7 @@
             They're used for eliminating empty spaces between tags which makes :empty selector possible.
             Can be removed when :has selector is widely supported.
         --}}
-        <div class="d-block mb-05">
+        <div class="d-block mb-05 lh-1">
         <span class="verdin-article-meta"><!--
          -->{{#if showPrimaryTag}}
                 {{#if primary_tag}}
@@ -89,12 +89,18 @@
     <section class="verdin-content verdin-canvas gh-canvas mb-4">
         {{#if access}}
 
+            {{content}}
+
+            <div class="verdin-tags ">
+                {{tags separator=""}}
+            </div>
+
             {{#if showPostSidebar}}
             
             <div class="verdin-content-sticky z-1">
                 <div class="verdin-content-sticky-inner">
 
-                    <div class="verdin-sticky-item">
+                    <div class="verdin-sticky-item hide-on-lg">
                         {{#primary_author}}
                             {{#if profile_image}}
                                 <figure class="verdin-author-image">
@@ -132,13 +138,8 @@
             </div>
             {{/if}}
             
-            
-            {{content}}
-            
 
-            <div class="verdin-tags ">
-                {{tags separator=""}}
-            </div>
+
             
 
         {{else}}
