@@ -371,6 +371,9 @@ h6,
 .mb-3{
     margin-bottom: 3rem;
 }
+.px-4{
+    padding: 0 4vw;
+}
 .color-bg-accent{
     background-color: var(--ghost-accent-color);
 }
@@ -851,7 +854,10 @@ figcaption{
 }
 
 .verdin-checkout-plan-content{
-    margin: 2vw 0;
+    margin: 2vw 0 2.5vw;
+}
+.verdin-checkout-plan-content li+li {
+    margin-top: 0.5vw;
 }
 .verdin-toggle-btn {
     display: grid;
@@ -908,32 +914,41 @@ input:checked + .slider:before {
 
 .verdin-monthly-price,
 .verdin-checkout-plan .price-btn-monthly{
-    display: none;
+    display: none !important;
 }
-.verdin-active .verdin-monthly-price,
+.verdin-active .verdin-monthly-price{
+    display: block !important;
+}
 .verdin-active .verdin-checkout-plan .price-btn-monthly{
-    display: block;
+    display: inline-flex !important;
 }
 .verdin-active .verdin-yearly-price,
-.verdin-active .verdin-checkout-plan .price-btn-yearly{
-    display: block;
+.verdin-active .verdin-checkout-plan .price-btn-annually{
+    display: none !important;
 }
 
 
 .verdin-plan-paid{
     position: absolute;
-    top: 20px;
+    top: 2vw;
     right: 0;
 }
 .verdin-plan-paid{
     font-weight: normal;
 }
-.verdin-plan-paid sup {
-    top: -0.5em;
+.verdin-price-wrapper{
+    display: block;
+    line-height: 1;
+    padding-left: 2.5rem;
+    position: relative;
 }
-.verdin-plan-paid sup {
-    font-size: 57%;
+.verdin-price-wrapper sup {
+    top: 0;
+    position: absolute;
+    font-size: 65%;
+    left: 0;
 }
+
 .verdin-price-label{
     font-weight: normal;
     font-size: 2rem;

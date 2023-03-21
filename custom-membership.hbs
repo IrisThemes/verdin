@@ -7,9 +7,9 @@
 
     <section class="verdin-content verdin-canvas gh-canvas mb-4">
 
-     <div class="verdin-article-header text-center mb-3">
+     <div class="verdin-article-header text-center mb-4">
         <h1 class="verdin-article-title bolder mb-3">{{title}}</h1>
-        <p>{{custom_excerpt}}</p>
+        <p class="px-4">{{custom_excerpt}}</p>
      </div>
 
     <div class="verdin-top-actions">
@@ -36,7 +36,7 @@
                             {{name}}</span>
                         
                         {{#if monthly_price}}
-                        <span class="verdin-monthly-price h1 mb-3">
+                        <span class="verdin-monthly-price h1 mb-3 verdin-price-wrapper">
                             <sup>{{price currency=currency}}</sup>
                             {{price monthly_price}}
                             <span class="verdin-price-label">{{t "/month"}}</span>
@@ -44,7 +44,7 @@
                          {{/if}}
 
                         {{#if yearly_price}}
-                        <span class="verdin-yearly-price h1 mb-3">
+                        <span class="verdin-yearly-price h1 mb-3 verdin-price-wrapper">
                              <sup>{{price currency=currency}}</sup>
                             {{price yearly_price}}
                             <span class="verdin-price-label">{{t "/year"}}</span>
@@ -67,10 +67,10 @@
                             {{/if}}
                         {{/match}}
                         {{#if monthly_price}}
-                            <a class="verdin-btn verdin-btn-large w-full price-btn-monthly" href="javascript:void(0)" data-portal="signup/{{id}}/monthly">{{t "Sign up now"}}{{t "Mo"}}</a>
+                            <a class="verdin-btn verdin-btn-large w-full price-btn-monthly" href="javascript:void(0)" data-portal="signup/{{id}}/monthly">{{t "Sign up now"}}</a>
                         {{/if}}
                         {{#if yearly_price}}
-                            <a class="verdin-btn verdin-btn-large w-full price-btn-annually" href="javascript:void(0)" data-portal="signup/{{id}}/yearly">{{t "Sign up now"}}{{t "Yr"}}</a>
+                            <a class="verdin-btn verdin-btn-large w-full price-btn-annually" href="javascript:void(0)" data-portal="signup/{{id}}/yearly">{{t "Sign up now"}}</a>
                         {{/if}}
                     </div>
                 {{/foreach}}
@@ -91,21 +91,13 @@
 {{/page}}
 
 <script>
-function check() {
-  var checkBox = document.getElementById("checbox");
-       var tiersBox = document.getElementsByClassName("verdin-tiers");
 
+    function check() {
+        var checkBox = document.getElementById("checbox");
+        var tiersBox = document.getElementsByClassName("verdin-tiers");
 
-
-    checkBox.onclick = function(){
-        console.log('1');
-   
-
-        tiersBox.classList.add('verdin-active');
-    };
-
-
-}
-check();
+        tiersBox[0].classList.toggle('verdin-active');
+    
+    }
 
 </script>
