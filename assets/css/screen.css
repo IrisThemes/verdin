@@ -254,7 +254,7 @@ h6,
 .h6,
 .h0 {
     margin-top: 0;
-    color: var(--color-darkgrey);
+    color: var(--color-text);
     font-family: var(--font-title);
     font-weight: bold;
     text-rendering: optimizeLegibility;
@@ -513,6 +513,16 @@ figcaption {
 .verdin-head-brand {
     display: flex;
     align-items: center;
+}
+@media (max-width: 768px) {
+    .verdin-head-brand {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        width: 100%;
+    }
+    .verdin-header{
+        height: 90px;
+    }
 }
 
 .verdin-sidebar-header {
@@ -1349,7 +1359,7 @@ button:hover {
     }   
     .verdin-subscribe-input{
         flex-direction: column;
-        padding: 0.5rem 0.5rem 0.5rem 0.5rem;        
+        padding: 1rem .5rem .5rem;        
     } 
     .verdin-subscribe-input .verdin-btn{
         width: 100%;
@@ -1434,6 +1444,7 @@ button:hover {
     .verdin-article-header {
         flex: 0 0 100%;
         flex-direction: column-reverse;
+        text-align: left;
     }   
     .verdin-article-header .verdin-list-item-meta{
         justify-content: center;
@@ -1569,7 +1580,7 @@ button:hover {
     @media (max-width: 1200px) {
     
     .verdin-content-sticky .verdin-sticky-item{
-        margin-top: calc(var(--main-spacing)/2);
+        margin-top: calc(var(--main-spacing)*1.68);
     }
     }
 
