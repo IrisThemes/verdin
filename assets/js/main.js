@@ -14,3 +14,19 @@
     ];
     reframe(document.querySelectorAll(sources.join(',')));
 })();
+
+
+/* Mobile menu burger toggle */
+(function () {
+    var head = document.querySelector('.gh-head');
+    var burger = head.querySelector('.gh-burger');
+    if (!burger) return;
+
+    burger.addEventListener('click', function () {
+        if (!head.classList.contains('is-head-open')) {
+            head.classList.add('is-head-open');
+        } else {
+            head.classList.remove('is-head-open');
+        }
+    });
+})();

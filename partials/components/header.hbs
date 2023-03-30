@@ -3,26 +3,37 @@
     * action (button, search)
 --}}
 
-<section class="verdin-header verdin-outer">
-    <div class="verdin-header-inner">
+<section class="verdin-header verdin-outer gh-head">
+    <div class="verdin-header-inner ">
        
             <div class="verdin-head-brand">
+                <div class="verdin-head-brand-main">
                 <a class="verdin-head-logo{{#unless @site.logo}} no-image{{/unless}} h2 bolder" href="{{@site.url}}">
                     {{#if @site.logo}}
                         <img src="{{@site.logo}}" alt="{{@site.title}}">
                     {{else}}
                         {{@site.title}}
                     {{/if}}
-                </a>
-                <nav class="verdin-head-menu hide-on-md">
-                    {{navigation}}      
-                </nav>   
-                <button class="verdin-burger show-on-md"></button>
+                </a> 
+
+                <div class="verdin-mobile-actions">
+                    <a href="" class="verdin-search verdin-lg-hide show-on-md-flex" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</a>
+                    <div class="verdin-burger verdin-burger-box show-on-md gh-burger"><div class="verdin-burger-inner"></div></div>
+                </div>
+
+                </div>
+
+                <div class="verdin-head-main-content">
+
+                    <nav class="verdin-head-menu hide-on-md">
+                        {{navigation}}      
+                    </nav>  
+
+                </div>
+
             </div>   
 
             <div class="verdin-head-actions hide-on-md">
-            
-                   <a href="" class="verdin-search show-on-md" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</a>
 
                     <div class="verdin-head-members">
                         {{#unless @member}}
