@@ -16,31 +16,24 @@
     <div class="verdin-list-inner">
 
         <header class="verdin-list-header">
-            <h2 class="verdin-list-title h5 bolder">{{t "Our writers"}}</h2>
+            <h2 class="verdin-list-title h5 bolder">{{t "Browse content"}}</h2>
         </header>
 
-
-        <div class="verdin-list-feed verdin-authors-feed mb-4">
+        <div class="verdin-more-feed mb-4">
 
             {{#get "authors" limit="5" include="count.posts" order="count.posts desc"}}
                 {{#foreach authors}}
-
-                <a href="{{url}}" class="{{#unless profile_image}} authors-no-image {{/unless}}">
-                {{#if profile_image}}
-                    <img class="verdin-author-image" loading="lazy" src="{{ img_url profile_image size="l"}}"
-                        alt="{{ name }}" />
-                {{/if}}
-                        <span class="verdin-author-count-posts">
-                            <span class="verdin-label">{{count.posts}}</span>
-                            <span class="verdin-meta-item">{{plural count.posts empty='No posts' singular='post' plural='posts'}}</span>
-                        </span>
-                </a>
-                
-
+                    <a href="{{url}}" class="h4">{{name}}</a>
                 {{/foreach}}
             {{/get}}
-        </div>
 
+            {{#get "tags" include="count.posts" order="count.posts desc"}}
+                {{#foreach tags}}
+                    <a href="{{url}}" class="h4">{{name}}</a>
+                {{/foreach}}
+            {{/get}}
+
+        </div>
 
     </div>
 </div>

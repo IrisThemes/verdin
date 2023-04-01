@@ -21,24 +21,11 @@
         </header>
 
 
-        <div class="verdin-tags-feed mb-4">
-
-            {{#get "tags" include="count.posts" order="count.posts desc" limit=count}}
-            {{#foreach tags}}
-
-            <a href="{{url}}" class="{{#unless feature_image}} tags-no-image {{/unless}}">
-                {{#if feature_image}}
-                <img class="verdin-tags-image" loading="lazy" src="{{ img_url feature_image size="l"}}"
-                    alt="{{ name }}" />
-                {{/if}}
-                <span class="verdin-tags-count-posts">
-                    <span class="verdin-label">{{ name }}</span>
-                    <span class="verdin-meta-item">{{plural count.posts empty='No posts' singular='% post' plural='% posts'}}</span>
-                </span>
-            </a>
-
-
-            {{/foreach}}
+        <div class="verdin-more-feed mb-4">
+            {{#get "tags" include="count.posts" order="count.posts desc"}}
+                {{#foreach tags}}
+                    <a href="{{url}}" class="h4">{{name}}</a>
+                {{/foreach}}
             {{/get}}
         </div>
 

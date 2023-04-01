@@ -9,9 +9,9 @@
             They're used for eliminating empty spaces between tags which makes :empty selector possible.
             Can be removed when :has selector is widely supported.
         --}}
-        <div class="d-block mb-05 lh-1">
-        <span class="verdin-article-meta"><!--
-         -->{{#if showPrimaryTag}}
+        <div class="d-block mb-1 lh-1">
+        <span class="verdin-article-meta">
+            {{#if showPrimaryTag}}
                 {{#if primary_tag}}
                     <a class="verdin-list-item-primary-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
                 {{/if}}
