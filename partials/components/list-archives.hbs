@@ -1,0 +1,37 @@
+{{!--
+    Parameters:
+    * displayAuthors (true, false)
+    * displayTags (true, false)
+--}}
+
+<div class="verdin-list" data-column="{{column}}">
+    <div class="verdin-list-inner">
+
+        {{#if title}}
+            <header class="verdin-list-header">
+                <h2 class="verdin-list-title h5 bolder">{{title}}</h2>
+            </header>
+        {{/if}}
+
+        <div class="verdin-more-feed mb-4">
+
+            {{#if displayAuthors}}
+                {{#get "authors" limit="5" include="count.posts" order="count.posts desc"}}
+                    {{#foreach authors}}
+                        <a href="{{url}}" class="h4">{{name}}</a>
+                    {{/foreach}}
+                {{/get}}
+            {{/if}}
+
+            {{#if displayTags}}
+                {{#get "tags" include="count.posts" order="count.posts desc"}}
+                    {{#foreach tags}}
+                        <a href="{{url}}" class="h4">{{name}}</a>
+                    {{/foreach}}
+                {{/get}}
+            {{/if}}
+
+        </div>
+
+    </div>
+</div>
