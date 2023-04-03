@@ -43,12 +43,12 @@
         "custom": {
             "primary_header": {
                 "type": "text",
-                "default": "Hey Joie Friendster here!",
+                "default": "Tony's innovative methods of marketing 👋",
                 "group": "homepage"
             },
             "secondary_header": {
                 "type": "text",
-                "default": "I’m a fashion blogger. If you are a bit of a fashionista, you are in the right place.",
+                "default": "Buckle up, my friends. We're in for one hell of a ride. And who knows? Maybe we'll discover something truly amazing together.",
                 "group": "homepage"
             },
             "hero_image": {
