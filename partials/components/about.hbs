@@ -20,9 +20,9 @@
         <div class="verdin-about-content">
             <div class="verdin-about-content-inner">
                 
-                <h1 class="verdin-about-primary bolder h1 bold">{{@custom.primary_header}}</h1>               
+                <h1 class="verdin-about-primary bolder {{#match @custom.primary_header_text_size "=" "Large"}}h1{{/match}}{{#match @custom.primary_header_text_size "=" "Medium"}}h2{{/match}}{{#match @custom.primary_header_text_size "=" "Small"}}h3{{/match}} bold">{{@custom.primary_header}}</h1>               
               
-                <p class="verdin-about-secondary">{{@custom.secondary_header}}</p>
+                <p class="verdin-about-secondary">{{{@custom.secondary_header}}}</p>
               
                 {{#if @site.members_enabled}}
                     {{#unless @member}}

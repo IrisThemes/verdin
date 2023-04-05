@@ -103,9 +103,11 @@
                     <div class="verdin-sticky-item hide-on-lg">
                         {{#primary_author}}
                             {{#if profile_image}}
-                                <figure class="verdin-author-image">
-                                    <img src="{{profile_image}}" alt="{{name}}">
-                                </figure>
+                                <a href="{{url}}" class="text-decoration-none" title="{{name}}">
+                                    <figure class="verdin-author-image">
+                                        <img src="{{profile_image}}" alt="{{name}}">
+                                    </figure>
+                                </a>
                             {{/if}}
                             <span class="verdin-list-item-meta">{{t "Written by"}}</span>
                             <h4 class="verdin-author-name">                            

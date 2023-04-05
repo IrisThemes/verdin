@@ -43,12 +43,18 @@
         "custom": {
             "primary_header": {
                 "type": "text",
-                "default": "Tony's innovative methods of marketing 👋",
+                "default": "I'm Verdin, a clean personal Ghost theme.",
+                "group": "homepage"
+            },
+            "primary_header_text_size": {
+                "type": "select",
+                "options": ["Large", "Medium", "Small"],
+                "default": "Large",
                 "group": "homepage"
             },
             "secondary_header": {
                 "type": "text",
-                "default": "Buckle up, my friends. We're in for one hell of a ride. And who knows? Maybe we'll discover something truly amazing together.",
+                "default": "Buckle up, my friends. We're in for one hell of a ride. And who knows? Maybe we'll discover something truly amazing together. <br/><br /> <strong>Join the community of more than 400 people.</strong>",
                 "group": "homepage"
             },
             "hero_image": {
