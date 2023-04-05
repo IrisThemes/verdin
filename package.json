@@ -1,7 +1,7 @@
 {
     "name": "verdin",
-    "description": "A Minimal Ghost theme",
-    "version": "1.0.1",
+    "description": "A clean personal Ghost blog theme",
+    "version": "1.0.0",
     "private": true,
     "engines": {
         "ghost": ">=5.0.0"
@@ -32,18 +32,12 @@
             },
             "l": {
                 "width": 960
-            },
-            "xl": {
-                "width": 1200
-            },
-            "xxl": {
-                "width": 2000
             }
         },
         "custom": {
             "primary_header": {
                 "type": "text",
-                "default": "I'm Verdin, a clean personal Ghost theme.",
+                "default": "I'm Verdin, a personal Ghost blog theme.",
                 "group": "homepage"
             },
             "primary_header_text_size": {
