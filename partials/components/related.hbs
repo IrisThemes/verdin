@@ -1,8 +1,12 @@
 <!-- Related posts -->
 <div class="verdin-related mt-2">
-<h4 class="mb-3 h3">{{t "Related posts"}}</h4>
+
   <div class="verdin-related-posts-inner">
     {{#get "posts" limit="3" filter="id:-{{id}}+tag:{{primary_tag.slug}}"}}
+    {{#if posts}}
+
+      <h4 class="mb-3 h3">{{t "Related posts"}}</h4>
+      
       {{#foreach posts}}
         <div class="verdin-related-item mb-3">
             <a href="{{url}}" title="{{title}}" class="mb-0 text-decoration-none">
@@ -26,6 +30,7 @@
             </a>
         </div>
       {{/foreach}}
+    {{/if}}
     {{/get}}
   </div>
 </div>
