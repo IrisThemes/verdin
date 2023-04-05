@@ -1,5 +1,9 @@
 {{!< default}}
 
+{{!--
+    Page template.
+--}}
+
 {{#post}}
 
 <main class="verdin-main">
@@ -30,11 +34,6 @@
         {{/if}}
 
         <div class="verdin-article-header">
-        {{!--
-            HTML comments used in this block are intentional.
-            They're used for eliminating empty spaces between tags which makes :empty selector possible.
-            Can be removed when :has selector is widely supported.
-        --}}
 
         <h1 class="verdin-article-title bolder mb-3">{{title}}</h1>
 
@@ -65,10 +64,9 @@
     </header>
     
         {{#if access}}
-           
-        {{content}}    
-             
 
+        {{content}}    
+        
         {{else}}
 
             <div class="verdin-post-sneak-peek fading">

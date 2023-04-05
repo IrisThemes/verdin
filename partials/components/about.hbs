@@ -1,3 +1,11 @@
+{{!--
+    Parameters:
+    * hero_image ("Hide publication cover", "Display publication icon", "Publication cover rounded", "Publication cover sharp", "Publication cover stylish")
+    * primary_header (text)
+    * primary_header_text_size ("Large", "Medium", "Small")
+    * secondary_header (text)
+--}}
+
 <section class="verdin-about verdin-outer mb-4">
     <div class="verdin-about-inner {{#match @custom.hero_image "=" "Display publication icon"}} verdin-icon-on {{/match}}">
        
@@ -14,8 +22,6 @@
         {{/match}}
 
         {{/match}}
-        
-
 
         <div class="verdin-about-content">
             <div class="verdin-about-content-inner">
@@ -27,7 +33,7 @@
                 {{#if @site.members_enabled}}
                     {{#unless @member}}
                         <div class="verdin-subscribe-input" data-portal>
-                            jamie@example.com
+                            verdin@example.com
                             <span class="verdin-btn verdin-primary-btn">Subscribe</span>
                         </div>
                     {{/unless}}

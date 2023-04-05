@@ -1,4 +1,24 @@
 {{!< default}}
+
+{{!--
+    Default index template.
+
+    Parameters that you can change:
+    
+    * count = number of posts
+    * layout = (list,grid) 
+    * showHeader = (true, false)
+    * showPrimaryAuthor = (true,false) 
+    * showPublishedAt = (true,false) 
+    * showAccessMeta = (true,false) 
+    * showPrimaryTag = (true,false) 
+    * showFeaturedMeta = (true,false) 
+    * showPrimaryTag = (true,false) 
+    * showImageHoverAnimation = (true,false) 
+    * showMetaHoverAnimation = (true,false) 
+    * titleSize= (h2,h3,h4)
+--}}
+
 {{#match @custom.featured_posts_layout "!=" "Hide featured posts"}}
 <section class="verdin-featured mb-4">
     <div class="verdin-outer">
@@ -28,7 +48,7 @@
                 showPrimaryAuthor=false
                 showPublishedAt=true
                 showAccessMeta=true
-                 showFeaturedMeta=false
+                showFeaturedMeta=false
                 showPrimaryTag=true
                 showImageHoverAnimation=true
                 showMetaHoverAnimation=true

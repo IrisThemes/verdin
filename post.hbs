@@ -1,8 +1,26 @@
 {{!< default}}
 
+
+{{!--
+    Default post.
+
+    Parameters that you can change:
+
+    * showComments = (list,grid) 
+    * showExcerpt= (true, false)
+    * showPrimaryAuthor = (true,false) 
+    * showPublishedAt = (true,false) 
+    * showAccessMeta = (true,false) 
+    * showPrimaryTag = (true,false) 
+    * showFeaturedMeta = (true,false) 
+    * showReadingTime = (true,false) 
+    * shotRelatedPosts = (true,false) 
+--}}
+
 {{#post}}
 
 <main class="verdin-main">
+    
     {{> "components/article" 
                 showComments=true
                 showExcerpt=true 

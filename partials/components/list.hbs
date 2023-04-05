@@ -2,24 +2,26 @@
     Parameters:
     * layout (grid, magazine)
     * count (number)
-    * columns (number)
     * slug (tag)
     * showHeader (true, false)
-    * showPrimaryTag (true, false)
-    * showPrimaryAuthor (true, false)
     * showExcerpt (true, false)
+    * showPrimaryAuthor (true, false)
     * showPublishedAt (true, false)
+    * showAccessMeta (true, false)
+    * showPrimaryTag (true, false)
     * showReadingTime (true, false)
-    * hasPagination (true, false)
+    * showImageHoverAnimation (true, false)
+    * showMetaHoverAnimation (true, flase)
+    * titleSize (text)
 --}}
 
 <div class="verdin-list verdin-{{layout}}-wrapper" data-column="{{column}}">
     <div class="verdin-list-inner">
 
     {{#if showHeader}}
-            <header class="verdin-list-header">
-                <h2 class="verdin-list-title h5 bolder">{{t "Latest writings"}}</h2>
-            </header>
+        <header class="verdin-list-header">
+            <h2 class="verdin-list-title h5 bolder">{{t "Latest writings"}}</h2>
+        </header>
     {{/if}}
 
     

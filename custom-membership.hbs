@@ -1,103 +1,113 @@
 {{!< default}}
+
+{{!--
+    Membership page custom template.
+--}}
+
+
 {{#page}}
 
 <main class="verdin-main">
 
-<article class="verdin-article {{post_class}}">
+    <article class="verdin-article {{post_class}}">
 
-    <section class="verdin-content verdin-canvas gh-canvas mb-4">
+        <section class="verdin-content verdin-canvas gh-canvas mb-4">
 
-     <div class="verdin-article-header text-center mb-4">
-        <h1 class="verdin-article-title bolder mb-3">{{title}}</h1>
-        <p class="px-4">{{custom_excerpt}}</p>
-     </div>
+            <div class="verdin-article-header text-center mb-4">
+                <h1 class="verdin-article-title bolder mb-3">{{title}}</h1>
+                <p class="px-4">{{custom_excerpt}}</p>
+            </div>
 
-    <div class="verdin-top-actions">
-      <div class="verdin-toggle-btn">
-        <span id="month" class="verdin-monthly-label" >{{t "Monthly"}}</span>
-        <label class="switch">
-          <input type="checkbox" id="checbox" onclick="check()" checked >
-          <span class="slider round"></span>
-        </label>
-         <span id="annual" class="verdin-annual-label active" >{{t "Annually"}}</span>
-       </div>
-    </div>
+            <div class="verdin-top-actions">
+                <div class="verdin-toggle-btn">
+                    <span id="month" class="verdin-monthly-label">{{t "Monthly"}}</span>
+                    <label class="switch">
+                        <input type="checkbox" id="checbox" onclick="check()" checked>
+                        <span class="slider round"></span>
+                    </label>
+                    <span id="annual" class="verdin-annual-label active">{{t "Annually"}}</span>
+                </div>
+            </div>
 
-    <div class="verdin-tiers">
-            {{#get "tiers" include="monthly_price,yearly_price,benefits" limit="all" as |tiers|}}
+            <div class="verdin-tiers">
+                {{#get "tiers" include="monthly_price,yearly_price,benefits" limit="all" as |tiers|}}
                 {{#foreach tiers}}
-                    <div class="verdin-checkout-plan">
-                        <header class="verdin-checkout-plan-header">
-                        
-                        <span class="verdin-plan-name h3 mb-3 d-block {{#match type "paid"}}verdin-lock verdin-plan-paid{{/match}}">
+                <div class="verdin-checkout-plan">
+                    <header class="verdin-checkout-plan-header">
+
+                        <span
+                            class="verdin-plan-name h3 mb-3 d-block {{#match type "paid"}}verdin-lock verdin-plan-paid{{/match}}">
                             {{#match type "paid"}}
                             {{> icons/lock}}
-                             {{/match}}
+                            {{/match}}
                             {{name}}</span>
-                        
+
                         {{#if monthly_price}}
                         <span class="verdin-monthly-price h1 mb-3 verdin-price-wrapper">
                             <sup>{{price currency=currency}}</sup>
                             {{price monthly_price}}
                             <span class="verdin-price-label">{{t "/month"}}</span>
                         </span>
-                         {{/if}}
+                        {{/if}}
 
                         {{#if yearly_price}}
                         <span class="verdin-yearly-price h1 mb-3 verdin-price-wrapper">
-                             <sup>{{price currency=currency}}</sup>
+                            <sup>{{price currency=currency}}</sup>
                             {{price yearly_price}}
                             <span class="verdin-price-label">{{t "/year"}}</span>
                         </span>
-                         {{/if}}
+                        {{/if}}
 
                         <span class="h5 d-block">{{description}}</span>
 
-                        </header>
-                        <ul class="verdin-checkout-plan-content">
-                            {{#foreach benefits as |benefit|}}
-                                <li>{{benefit}}</li>
-                            {{/foreach}}
-                        </ul>
-                        {{#match type "free"}}
-                            {{#if @member}}
-                                <a class="verdin-btn verdin-btn-large w-full price-btn disabled" href="/signup">{{t "Current Plan"}}</a>
-                            {{else}}
-                                <a class="verdin-btn verdin-btn-large w-full price-btn" href="/signup">{{t "Signup for free"}}</a>
-                            {{/if}}
-                        {{/match}}
-                        {{#if monthly_price}}
-                            <a class="verdin-btn verdin-btn-large w-full price-btn-monthly" href="javascript:void(0)" data-portal="signup/{{id}}/monthly">{{t "Sign up now"}}</a>
-                        {{/if}}
-                        {{#if yearly_price}}
-                            <a class="verdin-btn verdin-btn-large w-full price-btn-annually" href="javascript:void(0)" data-portal="signup/{{id}}/yearly">{{t "Sign up now"}}</a>
-                        {{/if}}
-                    </div>
+                    </header>
+                    <ul class="verdin-checkout-plan-content">
+                        {{#foreach benefits as |benefit|}}
+                        <li>{{benefit}}</li>
+                        {{/foreach}}
+                    </ul>
+                    {{#match type "free"}}
+                    {{#if @member}}
+                    <a class="verdin-btn verdin-btn-large w-full price-btn disabled"
+                        href="/signup">{{t "Current Plan"}}</a>
+                    {{else}}
+                    <a class="verdin-btn verdin-btn-large w-full price-btn" href="/signup">{{t "Signup for free"}}</a>
+                    {{/if}}
+                    {{/match}}
+                    {{#if monthly_price}}
+                    <a class="verdin-btn verdin-btn-large w-full price-btn-monthly" href="javascript:void(0)"
+                        data-portal="signup/{{id}}/monthly">{{t "Sign up now"}}</a>
+                    {{/if}}
+                    {{#if yearly_price}}
+                    <a class="verdin-btn verdin-btn-large w-full price-btn-annually" href="javascript:void(0)"
+                        data-portal="signup/{{id}}/yearly">{{t "Sign up now"}}</a>
+                    {{/if}}
+                </div>
                 {{/foreach}}
-            {{/get}}
+                {{/get}}
+            </div>
+
+            <div class="verdin-content mt-4">
+                {{content}}
+            </div>
+
+        </section>
+    </article>
+
+    <div class="verdin-outer">
+        {{> "components/cta" title=@custom.email_signup_title subTitle=@custom.email_signup_subtitle}}
     </div>
-
-      <div class="verdin-content mt-4">
-        {{content}}
-      </div>
-
-    </section>
-</article>
-
- {{> "components/cta" title=@custom.email_signup_title subTitle=@custom.email_signup_subtitle}}
 
 </main>
 
 {{/page}}
 
 <script>
-
     function check() {
         var checkBox = document.getElementById("checbox");
         var tiersBox = document.getElementsByClassName("verdin-tiers");
 
         tiersBox[0].classList.toggle('verdin-active');
-    
-    }
 
+    }
 </script>
