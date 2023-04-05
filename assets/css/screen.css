@@ -1554,6 +1554,7 @@ button:hover {
 
 .verdin-content {
     position: relative;
+    min-height: 13vw;
 }
 
 /* ==========================================================================
@@ -1605,11 +1606,11 @@ button:hover {
     margin-bottom: 3rem;
 }
 
-.verdin-sticky-item:last-child:after{
+.verdin-sticky-item:first-child:before{
     display: none;
 }
 
-.verdin-sticky-item:after,
+.verdin-sticky-item:before,
 .verdin-separator:before {
     background: var(--color-text);
     content: "";
@@ -1619,12 +1620,10 @@ button:hover {
     margin-bottom: 1.5vw;
     width: 69px;
 }
-.verdin-sticky-item:after{
-    margin-bottom: 0;
-    margin-top: 1.5vw;
-}
 
-.verdin-sticky-item .verdin-list-item-meta {
+
+.verdin-sticky-item .verdin-list-item-meta,
+.verdin-sticky-item-prev-next .verdin-list-item-meta{
     font-family: var(--font-title);
     font-size: 1.4rem;
     letter-spacing: .05em;
