@@ -1448,6 +1448,11 @@ button:hover {
     align-items: center;
     gap: 2vw;
 }
+@media (max-width: 1024px) {
+    .verdin-cta-inner{
+        grid-template-columns: 45% auto;
+    }
+}
 @media (max-width: 768px) {
     .verdin-cta-inner {
         grid-template-columns: 100%;
@@ -1822,7 +1827,7 @@ button:hover {
 }
 
 .verdin-archive .verdin-cta {
-    padding: 6rem;
+    padding: 6rem 6rem 3rem;
 }
 
 .verdin-archive-header {
@@ -1963,6 +1968,7 @@ iframe,
     .verdin-about-primary{
         font-size: 3rem;
     }
+
 }
 @media (max-width: 768px) {
     :root {
@@ -1986,6 +1992,9 @@ iframe,
     }
     .verdin-article-image{
         width: 100%;
+    }
+    .verdin-article-image img{
+        margin: 0 auto;
     }
 
 }
