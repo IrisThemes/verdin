@@ -1041,7 +1041,7 @@ figcaption {
 }
 
 .verdin-grid-feed .verdin-list-item-image img {
-    aspect-ratio: 3/2;
+    aspect-ratio: 1/1.2;
     object-fit: cover;
     width: 100%;
 }
@@ -1518,7 +1518,7 @@ button:hover {
 }
 
 .verdin-lock svg {
-    width: 18px;
+    width: 16px;
 }
 
 .verdin-list-item-meta span.verdin-lock:before {
