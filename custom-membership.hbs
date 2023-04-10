@@ -13,7 +13,7 @@
 
         <section class="verdin-content verdin-canvas gh-canvas mb-4">
 
-            <div class="verdin-article-header text-center mb-4">
+            <div class="verdin-article-header text-center mb-3">
                 <h1 class="verdin-article-title bolder mb-3">{{title}}</h1>
                 <p class="px-4">{{custom_excerpt}}</p>
             </div>
@@ -71,7 +71,7 @@
                     <a class="verdin-btn verdin-btn-large w-full price-btn disabled"
                         href="/signup">{{t "Current Plan"}}</a>
                     {{else}}
-                    <a class="verdin-btn verdin-btn-large w-full price-btn" href="/signup">{{t "Signup for free"}}</a>
+                    <a class="verdin-btn verdin-btn-large w-full price-btn" href="javascript:void(0)" data-portal="signin">{{t "Signup for free"}}</a>
                     {{/if}}
                     {{/match}}
                     {{#if monthly_price}}
