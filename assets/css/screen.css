@@ -1250,13 +1250,17 @@ figcaption {
 
 .verdin-checkout-plan {
     background: var(--color-white);
-    padding: 2vw;
     border: 1px solid;
+    padding: 2vw;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .verdin-checkout-plan-content {
     margin: 2vw 0 2.5vw;
+    font-size: 1.8rem;
 }
 
 .verdin-checkout-plan-content li+li {
@@ -1892,6 +1896,29 @@ iframe,
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.kg-toggle-card{
+    background: var(--color-white);
+    box-shadow: none;
+    border: 1px solid;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+.kg-toggle-card-icon{
+    background: var(--color-white) !important;
+    padding: 0;
+}
+.kg-toggle-card .kg-toggle-card-icon, .kg-toggle-card .kg-toggle-card-icon svg {
+    width: 20px;
+    height: 20px;
+    color: var(--color-three);
+}
+.kg-toggle-card .kg-toggle-content ol, .kg-toggle-card .kg-toggle-content p, .kg-toggle-card .kg-toggle-content ul {
+    font-size: 1.8rem;
+    line-height: 1.7;
+    margin-top: 0.95em;
+    margin-bottom: 0;
 }
 
 /* ==========================================================================
