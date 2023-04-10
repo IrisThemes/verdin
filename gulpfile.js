@@ -51,8 +51,10 @@ function css(done) {
 function js(done) {
     pump([
         src([
+            'node_modules/@tryghost/shared-theme-assets/assets/js/v2/lib/dropdown.js',
             'node_modules/@tryghost/shared-theme-assets/assets/js/v2/lib/pagination.js',
-            'node_modules/@tryghost/shared-theme-assets/assets/js/v2/lib/vendor/reframe.min.js',
+            'node_modules/@tryghost/shared-theme-assets/assets/js/v2/lib/vendor/reframe.min.js',            
+            'node_modules/@tryghost/shared-theme-assets/assets/js/v2/lib/vendor/imagesloaded.pkgd.min.js',
             'assets/js/lib/*.js',
             'assets/js/main.js'
         ], {sourcemaps: true}),

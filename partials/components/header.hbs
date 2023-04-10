@@ -4,11 +4,11 @@
 --}}
 
 <section class="verdin-header verdin-outer gh-head">
-    <div class="verdin-header-inner ">
+    <div class="verdin-header-inner gh-head-brand">
        
             <div class="verdin-head-brand">
-                <div class="verdin-head-brand-main">
-                <a class="verdin-head-logo{{#unless @site.logo}} no-image{{/unless}} h2 bolder" href="{{@site.url}}">
+                <div class="verdin-head-brand-main gh-head-logo">
+                <a class="verdin-head-logo{{#unless @site.logo}} no-image{{/unless}} h2 bolder " href="{{@site.url}}">
                     {{#if @site.logo}}
                         <img src="{{@site.logo}}" alt="{{@site.title}}">
                     {{else}}
@@ -25,7 +25,7 @@
 
                 <div class="verdin-head-main-content">
 
-                    <nav class="verdin-head-menu hide-on-md">
+                    <nav class="verdin-head-menu hide-on-md gh-head-menu">
                         {{navigation}}      
                     </nav>  
 

@@ -33,3 +33,8 @@
         }
     });
 })();
+
+/* Turn the main nav into dropdown menu when there are more than 5 menu items */
+(function () {
+    dropdown();
+})();

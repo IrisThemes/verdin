@@ -50,7 +50,7 @@
     {{ghost_head}}
 </head>
 
-<body class="{{body_class}} {{#match @custom.typography "Tight"}}is-font-tight{{/match}} {{#match @custom.typography "Playful"}}is-font-playful{{/match}}{{#match @custom.typography "Elegant"}}is-font-elegant{{/match}}{{#match @custom.hero_image "=" "Display publication icon"}} verdin-body-icon-on {{/match}}">
+<body class="{{body_class}}{{{block "body_class"}}}{{#match @custom.typography "Tight"}}is-font-tight{{/match}} {{#match @custom.typography "Playful"}}is-font-playful{{/match}}{{#match @custom.typography "Elegant"}}is-font-elegant{{/match}}{{#match @custom.hero_image "=" "Display publication icon"}} verdin-body-icon-on {{/match}}">
 
 <div class="verdin-site">
 

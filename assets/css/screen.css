@@ -532,15 +532,20 @@ figcaption {
     align-items: center;
 }
 
+
 .verdin-header-inner {
-    display: flex;
-    width: 100%;
     align-items: center;
-    justify-content: space-between;
+    column-gap: 0;
+    display: grid;
+    grid-auto-flow: row dense;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    width: 100%;
 }
 
 .verdin-head-brand {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
     align-items: center;
 }
 @media (max-width: 768px) {
@@ -551,6 +556,9 @@ figcaption {
     }
     .verdin-header{
         height: 90px;
+    }
+    .verdin-header-inner {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -856,6 +864,12 @@ figcaption {
     max-width: 169px;
     border-radius: 50%;
 }
+.gh-head-menu {
+    display: flex;
+}
+
+
+
 
 /* ==========================================================================
    Navigation
@@ -863,7 +877,7 @@ figcaption {
 
 .nav {
     list-style: none;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 3rem;
     margin: 0 0 0 3rem;
@@ -1462,7 +1476,7 @@ input:checked+.slider:before {
     align-items: center;
     justify-content: center;
 }
-@media (min-width: 1020px) {
+@media (max-width: 1344px) {
     .verdin-search {
         width: 38px;
         height: 38px;
@@ -1478,7 +1492,7 @@ input:checked+.slider:before {
 .verdin-head-actions {
     display: flex;
     align-items: center;
-    justify-self: center;
+    justify-self: end;
 
 }
 .verdin-head-actions .show-on-md{
@@ -2145,6 +2159,9 @@ iframe,
     .verdin-about-primary{
         font-size: 3rem;
     }
+
+}
+@media (max-width: 767px) {
 
 }
 @media (max-width: 768px) {
