@@ -595,7 +595,7 @@ figcaption {
     padding-top: var(--main-spacing);
     padding-bottom: var(--main-spacing);
 }
-@media (max-width: 1020px) {
+@media (max-width: 768px) {
 
 .verdin-head-main-content{
     display: none;
@@ -864,12 +864,6 @@ figcaption {
     max-width: 169px;
     border-radius: 50%;
 }
-.gh-head-menu {
-    display: flex;
-}
-
-
-
 
 /* ==========================================================================
    Navigation
@@ -907,6 +901,53 @@ figcaption {
 .verdin-burger,
 .verdin-lg-hide {
     display: none;
+}
+.gh-head-menu {
+    display: flex;
+}
+.gh-icon-btn {
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    color: var(--color-text);
+    cursor: pointer;
+    display: inline-flex;
+    height: 30px;
+    justify-content: center;
+    outline: none;
+    padding: 0;
+    width: 30px;
+}
+.nav-more-toggle {
+    font-size: inherit;
+    margin: 0 -6px;
+    position: relative;
+    text-transform: inherit;
+}
+.gh-dropdown {
+    background-color: var(--color-white);
+    border-radius: 0;
+    margin-top: 10px;
+    opacity: 0;
+    padding: 12px 0;
+    position: absolute;
+    right: -16px;
+    text-align: left;
+    top: 100%;
+    transform: translate3d(0,6px,0);
+    transition: opacity .3s,transform .2s;
+    visibility: hidden;
+    width: 200px;
+    z-index: 90;
+}
+.is-dropdown-open .gh-dropdown {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+.gh-dropdown li a {
+    display: block;
+    padding: 1.1rem 2.1rem;
 }
 
 /* ==========================================================================
@@ -2142,7 +2183,12 @@ iframe,
     }
 }
 @media (max-width: 1020px) {
+    .verdin-about-primary{
+        font-size: 3rem;
+    }
 
+}
+@media (max-width: 767px) {
     .hide-on-md{
         display: none;
     }
@@ -2156,13 +2202,6 @@ iframe,
         width: 28px;
         height: 28px;
     }
-    .verdin-about-primary{
-        font-size: 3rem;
-    }
-
-}
-@media (max-width: 767px) {
-
 }
 @media (max-width: 768px) {
     :root {
