@@ -1462,6 +1462,12 @@ input:checked+.slider:before {
     align-items: center;
     justify-content: center;
 }
+@media (min-width: 1020px) {
+    .verdin-search {
+        width: 38px;
+        height: 38px;
+    }    
+}
 .verdin-mobile-actions{
     display: flex;
     align-items: center;
@@ -1886,6 +1892,11 @@ input:checked+.slider:before {
 
 .verdin-archive-image {
     text-align: right;
+}
+.verdin-archive-description{
+    letter-spacing: .075em;
+    font-size: 1.8rem;
+    line-height: 1.7;    
 }
 
 /* ==========================================================================
