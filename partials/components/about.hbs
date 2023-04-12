@@ -17,7 +17,21 @@
        
         {{#match @custom.hero_image "!=" "Hide publication cover"}}
             {{#if @site.cover_image}}
-                <img class="verdin-about-image {{#match @custom.hero_image "=" "Publication cover rounded"}}verdin-rounded{{/match}}{{#match @custom.hero_image "=" "Publication cover stylish"}}verdin-stylish{{/match}}" src="{{@site.cover_image}}" alt="{{@site.title}}">
+            <picture>
+                <source  
+                    media="(max-width: 390px)" 
+                    srcset="{{img_url @site.cover_image size="m"}} 1x, {{img_url @site.cover_image size="l"}} 2x"
+                    type="image/jpeg" />
+                <source    
+                    srcset="{{img_url @site.cover_image size="l"}} 1x, {{img_url @site.cover_image size="l"}} 2x"
+                    type="image/jpeg" />
+                <source srcset="{{img_url @site.cover_image size="l"}} 1x, {{img_url @site.cover_image size="l"}} 2x" type="image/jpeg" />
+                <img class="verdin-about-image lazyload {{#match @custom.hero_image "=" "Publication cover rounded"}}verdin-rounded{{/match}}{{#match @custom.hero_image "=" "Publication cover stylish"}}verdin-stylish{{/match}}"
+                    src="{{img_url @site.cover_image size="l"}}" 
+                    alt="{{#if @site.title}}{{@site.title}}{{/if}}"
+                    width="460"
+                    data-sizes="auto" />
+            </picture>
             {{/if}}
         {{/match}}
 

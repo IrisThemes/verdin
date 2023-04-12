@@ -25,9 +25,9 @@
     {{/if}}
 
     
-    {{#if @custom.enter_tag_slugs_for_homepage_sections}}
+    {{#if @custom.enter_tag_slugs_for_homepage}}
         <div class="verdin-{{layout}}-feed verdin-feed">
-            {{#get "posts" include="authors,tags" filter="tag:[{{@custom.enter_tag_slugs_for_homepage_sections}}]" limit=count}}
+            {{#get "posts" include="authors,tags" filter="tag:[{{@custom.enter_tag_slugs_for_homepage}}]" limit=count}}
                 {{#foreach posts}}
                     {{> components/list-item 
                     showExcerpt=../../showExcerpt

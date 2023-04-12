@@ -11,8 +11,12 @@
             --color-bg: {{@custom.background_color}}
         }
     </style>
-    
-    <link rel="stylesheet" href="{{asset "built/screen.css"}}">
+
+    {{#is "home"}}
+        {{#if @site.cover_image}}
+            <link rel="preload" as="image" href="{{img_url @site.cover_image size="l"}}">
+        {{/if}}
+    {{/is}}
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,6 +30,11 @@
      {{#match @custom.typography "Elegant"}}
         <link href="https://fonts.googleapis.com/css2?family=Joan&family=Lora:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
     {{/match}}
+
+    <link rel="stylesheet" href="{{asset "built/screen.css"}}">
+
+    {{!-- Adding a lazyslizes plugin before everything because of the performance - https://github.com/aFarkas/lazysizes#include-early --}}
+    <script src="{{asset "built/lazysizes.min.js"}}"></script>
 
     <script>
         var site_url = '{{ @site.url }}',

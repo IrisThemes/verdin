@@ -7,6 +7,9 @@
         "ghost": ">=5.0.0"
     },
     "license": "MIT",
+    "screenshots": {
+        "desktop": "assets/screenshot-desktop.jpg"
+    },
     "author": {
         "name": "Iris Themes",
         "email": "support@iristhemes.com",
@@ -17,7 +20,7 @@
         "theme",
         "ghost-theme"
     ],
-    "docs": "https://iristhemes.com/docs",
+    "docs": "https://iristhemes.com/documentation/verdin",
     "config": {
         "posts_per_page": 6,
         "image_sizes": {
@@ -27,6 +30,12 @@
             "s": {
                 "width": 300
             },
+            "li-m": {
+                "width" : 390
+            },
+            "li-mx2": {
+                "width" : 780
+            },
             "m": {
                 "width": 720
             },
@@ -34,6 +43,7 @@
                 "width": 960
             }
         },
+        "card_assets": true,
         "custom": {
             "primary_header": {
                 "type": "text",
@@ -83,7 +93,7 @@
                 "default": "List",
                 "group": "homepage"
             },
-            "enter_tag_slugs_for_homepage_sections": {
+            "enter_tag_slugs_for_homepage": {
                 "type": "text",
                 "group": "homepage"
             },

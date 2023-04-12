@@ -58,16 +58,18 @@
 
         {{#if feature_image}}
             <figure class="verdin-list-item-image">
-                <img
-                    srcset="{{img_url feature_image size="s"}} 300w,
-                            {{img_url feature_image size="m"}} 720w,
-                            {{img_url feature_image size="l"}} 960w,
-                            {{img_url feature_image size="l"}} 1200w,
-                            {{img_url feature_image size="l"}} 2000w"
-                    sizes="(max-width: 1200px) 100vw, 1200px"
-                    src="{{img_url feature_image size="m"}}"
-                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
-                >
+                <picture>
+                    <source  
+                        media="(max-width: 390px)" 
+                        srcset="{{img_url feature_image size="s"}} 1x, {{img_url feature_image size="li-m"}} 2x"
+                        type="image/jpeg" />
+                    <source srcset="{{img_url feature_image size="li-m"}} 1x, {{img_url feature_image size="li-mx2"}} 2x" type="image/jpeg" />
+                    <img class="lazyload" 
+                        src="{{img_url feature_image size="li-m"}}" 
+                        alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                        data-sizes="auto" />
+                </picture>
+
             </figure>
         {{/if}}
 
