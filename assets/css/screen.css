@@ -68,6 +68,10 @@ body.is-font-elegant {
     --font-title: 'Lora', serif;
     --font-text: 'Joan', serif;
 }
+body.is-font-system{
+    --font-title: 'Arial', serif;
+    --font-text: 'Helvetica', serif;   
+}
 
 /* ==========================================================================
    Base styles

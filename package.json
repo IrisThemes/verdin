@@ -45,6 +45,11 @@
         },
         "card_assets": true,
         "custom": {
+            "display_about_area": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
+            },
             "primary_header": {
                 "type": "text",
                 "default": "I'm Verdin, a personal Ghost blog theme.",
@@ -69,7 +74,7 @@
             },
             "typography": {
                 "type": "select",
-                "options": ["Tight", "Playful", "Elegant"],
+                "options": ["System","Tight", "Playful", "Elegant"],
                 "default": "Playful"
             },
             "background_color": {

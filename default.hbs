@@ -18,6 +18,8 @@
         {{/if}}
     {{/is}}
 
+    {{#match @custom.typography "!=" "System"}}
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
@@ -29,6 +31,8 @@
     {{/match}}
      {{#match @custom.typography "Elegant"}}
         <link href="https://fonts.googleapis.com/css2?family=Joan&family=Lora:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    {{/match}}
+
     {{/match}}
 
     <link rel="stylesheet" href="{{asset "built/screen.css"}}">
@@ -59,14 +63,16 @@
     {{ghost_head}}
 </head>
 
-<body class="{{body_class}}{{{block "body_class"}}}{{#match @custom.typography "Tight"}}is-font-tight{{/match}} {{#match @custom.typography "Playful"}}is-font-playful{{/match}}{{#match @custom.typography "Elegant"}}is-font-elegant{{/match}}{{#match @custom.hero_image "=" "Display publication icon"}} verdin-body-icon-on {{/match}}">
+<body class="{{body_class}}{{{block "body_class"}}} {{#match @custom.typography "System"}}is-font-system{{/match}}{{#match @custom.typography "Tight"}}is-font-tight{{/match}} {{#match @custom.typography "Playful"}}is-font-playful{{/match}}{{#match @custom.typography "Elegant"}}is-font-elegant{{/match}}{{#match @custom.hero_image "=" "Display publication icon"}} verdin-body-icon-on {{/match}}">
 
 <div class="verdin-site">
 
         {{> "components/header" }}
         
         {{#is "home"}}
-            {{> "components/about" }}
+            {{#if @custom.display_about_area}}
+                {{> "components/about" }}
+            {{/if}}
         {{/is}}
 
         {{{body}}}
