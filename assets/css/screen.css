@@ -1666,6 +1666,13 @@ input:checked+.slider:before {
     line-height: 1.4;
     padding: 2rem;
 }
+.verdin-form fieldset+input[type=submit], 
+.verdin-form input+label, 
+.verdin-form label+button[type=submit], 
+.verdin-form label+label {
+    margin-top: 2rem;
+    display: block;
+}
 /* ==========================================================================
     Single post
    ========================================================================== */
