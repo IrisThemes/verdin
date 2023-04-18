@@ -1508,7 +1508,9 @@ input:checked+.slider:before {
 }
 
 .verdin-btn:hover,
-.verdin-subscribe-input:hover .verdin-btn{
+.verdin-subscribe-input:hover .verdin-btn,
+.verdin-form input[type=submit]:hover,
+.verdin-form button:hover{
     background-color: var(--ghost-accent-color);
 }
 
