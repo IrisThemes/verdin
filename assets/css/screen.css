@@ -1481,7 +1481,9 @@ input:checked+.slider:before {
    ========================================================================== */
 
 
-.verdin-btn {
+.verdin-btn,
+.verdin-form input[type=submit],
+.verdin-form button{
     align-items: center;
     background-color: var(--color-text);
     border: none;
@@ -1633,6 +1635,37 @@ input:checked+.slider:before {
     display: none;
 }
 
+/* ==========================================================================
+   Verdin forms
+   ========================================================================== */
+
+.verdin-form input[type=text],
+.verdin-form input[type=email],
+.verdin-form textarea{
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 1px solid var(--color-text);
+    border-radius: none;
+    padding: 0 15px;
+    outline: 0;
+    line-height: 50px;
+    width: 100%;
+    font-size: 100%;
+    margin: 0;
+    height: 50px;
+    vertical-align: baseline;
+    background: var(--color-white);
+    color: var(--color-text);
+}
+.verdin-form label{
+    font-size: 1.8rem;
+    opacity: .5;
+}
+.verdin-form textarea{
+    min-height: 150px;
+    line-height: 1.4;
+    padding: 2rem;
+}
 /* ==========================================================================
     Single post
    ========================================================================== */
