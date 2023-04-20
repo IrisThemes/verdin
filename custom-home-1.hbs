@@ -1,10 +1,16 @@
 {{!< default}}
+<link href="https://fonts.googleapis.com/css2?family=Inter&family=Inter+Tight:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
     :root {
         --color-bg: #cdcef9;
         --ghost-accent-color: #958db5;
     }
-</style>
+    div.is-font-tight {
+    --font-title: "Inter Tight",sans-serif;
+    --font-text: "Inter",sans-serif;
+    }
+</style> 
+<div class="is-font-tight">
 
 <section class="verdin-about verdin-outer mb-4">
     <div class="verdin-about-inner ">
@@ -414,7 +420,10 @@ Featured
     </a>
 </article>        </div>
         
+            <div class="verdin-pagination mb-4" style="display:none;">
+        <button class="verdin-btn gh-loadmore">Load more</button>
 
+    </div>
 
 
     </div>
@@ -468,3 +477,4 @@ Featured
     </section>
 
 </main>
+</div>

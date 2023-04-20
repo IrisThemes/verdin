@@ -1,12 +1,17 @@
 {{!< default}}    
+<link href="https://fonts.googleapis.com/css2?family=Joan&family=Lora:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
     :root {
         --color-bg: #c4fdf9;
         --ghost-accent-color: #22c3b8;
     }
+    div.is-font-elegant {
+    --font-title: "Lora",serif;
+    --font-text: "Joan",serif;
+    }
 </style>
   
-  
+<div class="is-font-elegant">
                 
 <section class="verdin-about verdin-outer mb-4">
     <div class="verdin-about-inner ">
@@ -304,7 +309,10 @@ Featured
     </a>
 </article>        </div>
         
+            <div class="verdin-pagination mb-4" style="display:none;">
+        <button class="verdin-btn gh-loadmore">Load more</button>
 
+    </div>
 
 
     </div>
@@ -358,3 +366,4 @@ Featured
     </section>
 
 </main>
+</div>  
