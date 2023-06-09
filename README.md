@@ -15,10 +15,10 @@ Ghost version: 5.0.0 or higher
 
 ### How do I install Siskin Ghost theme?
 
-- Make sure that you are logged into your publication at [!badge variant="info" text="yourawesomeblog.com/ghost/signin"] 
-- Go to [!badge variant="info" text="Settings → Design"]  
-- Under **Change Theme** click [!badge variant="info" text="Upload theme"]  
-- Click inside the upload box to select a siskin.zip, or drag-and-drop the siskin.zip into the upload box
+- Make sure that you are logged into your publication at yourawesomeblog.com/ghost/signin
+- Go to Settings → Design 
+- Under **Change Theme** click Upload theme
+- Click inside the upload box to select a verdin.zip, or drag-and-drop the verdin.zip into the upload box
 - If you want to activate the theme immediately click **Activate Now** or **Close** if you want to do it later
 
 
