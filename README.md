@@ -1,3 +1,5 @@
+![ghost-blog-theme-verdin-2|555x392](upload://nLrIBrUadvEqSf68zRIgbAYwEBL.jpeg)
+
 This is a repo of a Verdin - A Personal Ghost Blog Theme. A clean and stylish personal Ghost blog theme that is designed to make your content shine. 
 Packed with features that will help you create a stunning and engaging blog that your readers will love.
 
