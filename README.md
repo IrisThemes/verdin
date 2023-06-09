@@ -2,12 +2,12 @@ This is a repo of a Verdin - A Personal Ghost Blog Theme. A clean and stylish pe
 Packed with features that will help you create a stunning and engaging blog that your readers will love.
 
 [Demo](https://verdin.iristhemes.com) | 
-[More info](https://iristhemes.com/themes/verdin) | [Documentation](https://iristhemes.com/documentation/verdin) | 
+[More info](https://iristhemes.com/themes/verdin) | [Documentation](https://iristhemes.com/documentation/verdin) | [Iris Themes](https://iristhemes.com/)
 
 ### Theme Info
 ```
 Theme name: Verdin
-Theme Developer: [Iris Themes](https://iristhemes.com/)
+Theme Developer: Iris Themes
 Version: 1.0
 Description: Personal Ghost Blog Theme
 Documentation: https://iristhemes.com/documentation/verdin
